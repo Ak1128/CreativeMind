@@ -1,0 +1,266 @@
+<!DOCTYPE html> {% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- Contact Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+        /* -------x------- Header Page ---------x------- */
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Add styles to the form container */
+        
+        .container-login-signup {
+            position: absolute;
+            margin: 20px;
+        }
+        /* Set a style for the submit button */
+        
+        .bg-img .btn {
+            background-color: antiquewhite;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 26px;
+            margin: 2rem;
+            background: skyblue;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+        
+        .bg-img .btn:hover {
+            background: transparent;
+            border: 1px solid white;
+        }
+        
+        .bg-img .btn:hover {
+            background: transparent;
+            border: 2px solid whitesmoke;
+            color: white;
+        }
+        /* -------x------- Contact Form Page ---------x------- */
+        /* Style inputs */
+        
+        input[type=text],
+        label {
+            font-weight: bolder;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            border: 1px solid #ccc;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 3px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        /* Style the container/contact section */
+        
+        .container-contact {
+            background-position: center;
+            color: white;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .column,
+            input[type=submit] {
+                width: 100%;
+            }
+        }
+        /* Create two columns that float next to eachother */
+        
+        .column_1 {
+            float: left;
+            width: 60%;
+            margin-top: 0px;
+            padding: 25px;
+        }
+        
+        .column_2 {
+            float: left;
+            width: 40%;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        input[type=email],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            border: 1px solid #ccc;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        
+        .button-contact {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            width: 100%;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        
+        .button-contact span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button-contact span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button-contact:hover span {
+            padding-right: 25px;
+        }
+        
+        .button-contact:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section --------------------------------------------------->
+    {% include 'books/navbar.html' %}
+
+
+    <!-- Contact Header -->
+    <div class="bg-img">
+        <form action="/action_page.php" class="container-login-signup">
+            <button type="submit" class="btn"><a href="{% url 'register' %}">Signup</a></button>
+            <button type="submit" class="btn"><a href="{% url 'login' %}">Login</a></button>
+        </form>
+    </div>
+
+
+    <!--- Contact Form -->
+    {% block content %}
+    <div class="container-contact">
+        <div style="text-align:center">
+            <u>
+        <h2>Contact Us</h2>
+      </u>
+            <hr>
+
+        </div>
+        <div class="row">
+            <div class="column_1">
+                <img src="{% static '/assets/contact1.jpg' %}" style="width:100%">
+            </div>
+            <div class="column_2">
+
+
+                {% if submitted %}
+                <p class="success">
+                    Your message was submitted successfully. Thank you.
+                </p>
+
+
+                {% else %}
+                <form action="" method="post" novalidate>
+                    <table>
+                        {{ form.as_p }}
+                    </table>
+                    <button class="button-contact"><span>Submit </span></button> {% csrf_token %}
+                </form>
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    {% endblock content %}
+    <!-------------------------------------------- Main Site Footer Section ------------------------------------------------------->
+    {% include 'books/footer.html' %}
+
+
+    <!-------------------------------------------- Main Site JSQuery Section --------------------------------------------------->
+
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

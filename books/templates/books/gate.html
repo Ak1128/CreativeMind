@@ -1,0 +1,642 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Exam Schedule</title>
+
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- schedule Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Header/Blog Title */
+        
+        .row-gate {
+            margin: auto 7rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Add a card effect for articles */
+        
+        .card-title {
+            background-color: white;
+            position: sticky;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row-gate:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* ----------------- Site Content --------------------- */
+        
+        .ui-button-text {
+            border: #333;
+            padding-right: 1rem;
+            color: #11609a;
+            font-size: 26px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        .entry a {
+            color: #ff0000;
+        }
+        
+        .entry {
+            color: #090909;
+            font: 15px/25px Georgia, "Times New Roman", Times, serif;
+        }
+        
+        .entry p {
+            color: #282828;
+            font-family: Georgia, Sans-serif;
+            margin: 0 0 15px;
+        }
+        
+        .entry h2 {
+            color: #222;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            font-weight: 700 !important;
+            line-height: 33px;
+            margin: 0 0 6px;
+        }
+        
+        .mytable1 {
+            overflow-x: scroll;
+        }
+        
+        ul {
+            margin: -4px 0 18px 18px;
+        }
+        
+        li {
+            border-top: #282828 5px;
+        }
+        
+        .entry h3 {
+            font-size: 14px;
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section ---------------------------------------->
+    {% include 'books/navbar.html' %}
+
+    <!-------------------------------------------- Main Site Content Section ------------------------------------------->
+    {% block gatecontent %}
+
+    <div class="row-gate">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+
+                    <h1>GATE 2021: Admit Card (Released), Exam Dates, Answer Key (Released)</h1>
+                </div>
+                <div class="entry">
+                    <p><strong>GATE 2021 </strong><strong>Admit
+              Card </strong>has been&nbsp;<strong>released</strong> on <strong>8th January 2021</strong>. <strong>Answer
+              Key</strong> (Institutional) has been <strong>released</strong>.&nbsp;<strong>Paper Wise Schedule
+            </strong>has been&nbsp;<strong>released.</strong> Exam Dates have been <strong>announced</strong>. Graduate Aptitude Test in Engineering (<strong>GATE 2021</strong>) is one of the <strong>national level</strong> entrance examination. It is
+                        conducted every year jointly by Institute of Science (IISc), Bangalore &amp; one of the IITs.</p>
+                    <p><strong>IIT Bombay</strong> is the conducting body of GATE 2021. The exam is a gateway to get admission in Master’s programs and direct doctoral programs in <strong>Engineering</strong>/ <strong>Technology</strong>/
+                        <strong>Architecture</strong> and Doctoral programs in relevant branches of <strong>Science</strong>. Through this article, candidates will get the complete information of GATE 2021.</p>
+
+                    <p style="text-align: center;"></p>
+                    <div class="sws-dividerbar-05-600 sws-dividebar"></div>
+                    <p></p>
+                    <p style="text-align: center;"><a id="uibtn10" target="_self" href="#dates" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam-Dates</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn10',
+                                    'href': '#dates',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn11" target="_self" href="#admit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h mPS2id-highlight mPS2id-highlight-first" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Admit Card</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn11',
+                                    'href': '#admit',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn12" target="_self" href="#pattern" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam-Pattern</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn12',
+                                    'href': '#pattern',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <p style="text-align: center;"><a id="uibtn14" target="_self" href="#key" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h mPS2id-highlight mPS2id-highlight-last" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Answer-Key</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn14',
+                                    'href': '#key',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn15" target="_self" href="#syllabus" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Syllabus</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn15',
+                                    'href': '#syllabus',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <h2 id="dates" class="_mPS2id-t"><i class="fas fa-book-reader"></i>GATE 2021 Exam Dates</h2>
+                    <hr>
+                    <p>Here candidates can check the <a href="">GATE Exam
+              Dates</a> for various events of 2021 session:</p>
+                    <table class="mytable1" style="width: 75.3348%; height: 242px;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300"><strong>Events</strong></td>
+                                <td style="width: 49.273%; height: 22px;" width="300"><strong>Dates (Announced)</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300">Online Application form opens</td>
+                                <td style="width: 49.273%; height: 22px;" width="300"><span style="color: #ff0000;">11th September
+                    2020<br> </span></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300">Closing of submission of application form</td>
+                                <td style="width: 49.273%; height: 22px;" width="300">8th October 2020</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="width: 49.273%; height: 44px;" width="300">Last date for submission of application fee (an additional fee will be applicable)</td>
+                                <td style="width: 49.273%; height: 44px;" width="300">14th October 2020</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="width: 49.273%; height: 44px;">Change of category, paper &amp; exam city (an additional fee will be applicable)</td>
+                                <td style="width: 49.273%; height: 44px;">28th October to 13th November 2020</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 49.273%;">Choice of exam city edit</td>
+                                <td style="width: 49.273%;">13th to 15th December 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300">Admit Card availability</td>
+                                <td style="width: 49.273%; height: 22px;" width="300"><strong>8th January 2021</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300">GATE 2021 Examination</td>
+                                <td style="width: 49.273%; height: 22px;" width="300"><strong><span style="color: #ff0000;">5th – 7th
+                      and 12th – 14th February 2021</span></strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;" width="300">Announcement of Result</td>
+                                <td style="width: 49.273%; height: 22px;" width="300"><strong>22nd March 2021</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 49.273%; height: 22px;">Score card available</td>
+                                <td style="width: 49.273%; height: 22px;"><strong>26th March – 31st May 2021</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="admit" class="_mPS2id-t mPS2id-target mPS2id-target-first"><i class="fas fa-book-reader"></i>GATE 2021 Admit Card</h2>
+                    <hr>
+                    <p>The <a href="">GATE 2021 admit card</a> has been made available through <strong>online</strong> mode on <strong>GOAPS</strong> website. No printed copy of the admit cards has been released by the authority.</p>
+                    <p>The candidates have to appear at the examination centre on the date and <strong>time specified</strong> in the admit card. No request for any changes in the centre or date/time specified in the admit card has been entertained.
+                    </p>
+                    <p>The admit card is made available for download from <strong>8th January 2021</strong>. Candidates should carry printout of the downloaded admit card to the examination for the verification along with the
+                        <strong>original</strong> and valid photo Identity proof.</p>
+                    <h2 id="key" class="_mPS2id-t mPS2id-target mPS2id-target-last"><i class="fas fa-book-reader"></i>GATE 2021 Answer Key</h2>
+                    <hr>
+                    <p>After the GATE 2021 examinations,<strong> candidates’ responses </strong>will be available at GOAPS. Candidates can get it by entering their login details.</p>
+                    <p><a href="">GATE answer keys</a> for various papers will be
+                        <strong>displayed</strong> in GATE website. Memory Based answer key has been released on <strong>6th
+              February 2021</strong>. Candidates may submit their queries on the answer keys in a given time period after the <strong>payment</strong>. Evaluation of examination papers will be finalized and score will be released.
+                    </p>
+                    <h2 id="pattern" class="_mPS2id-t"><i class="fas fa-book-reader"></i>GATE 2021 Exam Pattern</h2>
+                    <hr>
+                    <p>Here, candidates can check the complete <a href="">GATE
+              Exam pattern</a> in the below given section:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Mode:</strong> The exam will be conducted in online <strong>(CBT)</strong> mode.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>No of Subject Papers:</strong> The exam will be conducted for <strong>27 subject
+                papers</strong>. Two new subject papers – <strong>Environmental Science &amp; Engineering (ES)
+              </strong>and<strong> Humanities &amp; Social Sciences (XS) </strong>have been added this year.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Type of Questions:</strong> The questions will of Multiple Choice Questions
+                            <strong>(MCQ),</strong> Multiple Select Questions (MSQ)<strong> &amp; </strong>Numerical Answer type
+                            <strong>(NAT).</strong></li>
+                        <li><i class="fas fa-caret-right"></i><strong>Type of Sections:</strong> There will be two of types of sections in each paper – Compulsory &amp; Optional.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Duration of Exam:</strong> The exam will be of total <strong>3 hours.</strong></li>
+                        <li><i class="fas fa-caret-right"></i><strong>Maximum marks:</strong> The question paper will be of&nbsp;<strong>100 marks.</strong></li>
+                        <li><i class="fas fa-caret-right"></i><strong>No. of Questions:</strong> The question paper will consist of <strong>65 questions. </strong>
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marking Scheme:</strong> For MCQs and NATs, various questions will be of 1 or 2 marks. In MCQs of 1 mark, 1/3 marks will be deducted for wrong responses. For MCQs of 2 mark, 2/3 marks will
+                            be deducted for incorrect answers. There will be no negative marking for numerical type questions.</li>
+                    </ul>
+                    <p><strong>&nbsp;</strong><strong>Note:</strong> There will be <strong>NO negative marking</strong> for a wrong answer in NAT questions.</p>
+                    <h2 id="syllabus" class="_mPS2id-t">GATE 2021 Syllabus</h2>
+                    <hr>
+                    <p>The <a href="">GATE Syllabus</a> will be provided by the official authority. <strong>Two new subjects (</strong><strong>Environmental Science &amp;
+              Engineering&nbsp;</strong>and<strong> Humanities &amp; Social
+              Sciences</strong><strong>)</strong>&nbsp;have been added in the syllabus of GATE 2021.</p>
+                    <p>Here, we have given the <strong>syllabus for various subjects </strong>below:</p>
+                    <p><strong>Bio-medical Engineering (BM):</strong> Engineering Mathematics, Signals and Systems, Electrical Circuits, Measurements and Control Systems, Analog and Digital Electronics, Sensors and Bioinstrumentation, Measurements and Control
+                        Systems, Biomechanics, Human Anatomy and Physiology, Biomaterials, Medical Imaging Systems.
+                    </p>
+                    <p><strong>Architecture and Planning (AR):</strong> Architecture and Design, Construction and Management, Building Materials, Environmental Planning and Design, Building and Structure, etc.</p>
+                    <p><strong>Mathematics (MA):</strong> Linear Algebra, Algebra, Complex Analysis, Functional Analysis, Real Analysis, Numerical Analysis, etc.</p>
+                    <p><strong>Electronics and Communication Engineering (EC):</strong> Engineering Mathematics, Networks, Electronic Devices, Signals and Systems, Digital Circuits, Analog Circuits, etc.</p>
+                    <p><strong>Chemical Engineering (CH):</strong> Process Calculations and Thermodynamics, Engineering Mathematics, Fluid Mechanics and Mechanical Operations, etc.</p>
+                    <p><strong>Instrumentation Engineering (IN):</strong> Engineering Mathematics, Signals and Systems, Electrical Circuits, Control Systems, etc.</p>
+                    <p><strong>Petroleum Engineering (PE):</strong> Linear Algebra, Petroleum Formation Evaluation, Oil and Gas Well Testing, etc.</p>
+                    <p><strong>Civil Engineering (CE):</strong> Engineering Mathematics, Structural Engineering, Geotechnical Engineering, Structural Engineering, etc.</p>
+                    <p><strong>Statistics (ST):</strong> Calculus, Probability, Linear Algebra, Inference, Stochastic Processes, Multivariate Analysis, Design of Experiments &amp; Regression Analysis.</p>
+                    <h2><i class="fas fa-book-reader"></i>GATE 2021 Preparation Tips</h2>
+                    <hr>
+                    <p>Here, candidates can check some <a href="">GATE&nbsp;preparation tips</a> to get help in the preparation for the exam:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>First of all, go through the complete <strong>syllabus</strong>, marking <strong>pattern</strong> and exam pattern of the examination.</li>
+                        <li><i class="fas fa-caret-right"></i>Make a schematic study <strong>time</strong> <strong>table</strong> and follow it on a regular basis.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Go through best seller books for GATE 2021 preparation.</li>
+                        <li><i class="fas fa-caret-right"></i>Solve previous year question papers and sample papers provided by the various coaching institutions.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Take online <strong>mock tests</strong> to know the pattern of question paper.</li>
+                        <li><i class="fas fa-caret-right"></i>Maintain your health and do not take stress during exam preparation. Do some yoga and meditation.</li>
+                    </ul>
+                    <p><strong>Also Check:</strong></p>
+                    <p><a href="">GATE Exam Guidelines</a></p>
+                    <p><a href="" target="_blank" rel="noopener noreferrer">GATE
+              Books</a></p>
+
+                    <h2><i class="fas fa-book-reader"></i>GATE 2021 Result</h2>
+                    <hr>
+                    <p><a href="">GATE results</a> will be released by the official authority in the <strong>22nd March 2021.</strong> It will be available on the GATE 2021 website.</p>
+                    <p>Candidates can get the result by entering their <strong>login</strong> details. It will show the
+                        <strong>qualifying status</strong> of the candidate. It is necessary to keep the result till the admission process gets over.</p>
+                    <h2><i class="fas fa-book-reader"></i>GATE 2021 Score Card</h2>
+                    <hr>
+                    <p>The <a href="">GATE score card</a> will show the <strong>relative</strong> <strong>performance</strong> of the candidate in a particular subject. GATE 2021 score will be valid for <strong>3</strong><strong>years</strong> from the date
+                        of announcement of the results.
+                    </p>
+                    <p>The GATE 2021 scorecards can be <strong>downloaded</strong> between from <strong>26th March to
+              31st&nbsp;May 2021.</strong></p>
+                    <p>The GATE scorecard will be <strong>printed</strong> with the photograph that candidate has submitted at the time of filing application form. GATE qualified candidates have to pay a fee of Rs. 500 those want to get a
+                        <strong>soft copy</strong> of his/her GATE Scorecard after last week of May 2021.</p>
+                    <h2><i class="fas fa-book-reader"></i>GATE 2021 Cut Off</h2>
+                    <hr>
+                    <p>Below, candidates can check the <strong>expected</strong> <a href=""><strong>cut off</strong></a> for GATE 2021 entrance examination. After released by the official authority we will update the actual cut off marks.</p>
+                    <table class="mytable1" style="width: 85.13535031847134%; height: 242px;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="150"><strong>Streams</strong></td>
+                                <td style="height: 22px;" width="150"><strong>General</strong></td>
+                                <td style="height: 22px;" width="150"><strong>OBC</strong></td>
+                                <td style="height: 22px;" width="150"><strong>SC/ST/PH</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="150">Computer Science</td>
+                                <td style="height: 22px;" width="150">25</td>
+                                <td style="height: 22px;" width="150">22.30</td>
+                                <td style="height: 22px;" width="150">16.23</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="height: 44px;" width="150">Electronics and Communication</td>
+                                <td style="height: 44px;" width="150">25</td>
+                                <td style="height: 44px;" width="150">25.5</td>
+                                <td style="height: 44px;" width="150">16.50</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="150">Civil Engineering</td>
+                                <td style="height: 22px;" width="150">26.70</td>
+                                <td style="height: 22px;" width="150">18.1</td>
+                                <td style="height: 22px;" width="150">24.20</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="height: 44px;" width="150">Mechanical Engineering</td>
+                                <td style="height: 44px;" width="150">34.6</td>
+                                <td style="height: 44px;" width="150">31.5</td>
+                                <td style="height: 44px;" width="150">23.4</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="height: 44px;" width="150">Chemical Engineering</td>
+                                <td style="height: 44px;" width="150">37.1</td>
+                                <td style="height: 44px;" width="150">34</td>
+                                <td style="height: 44px;" width="150">25.0</td>
+                            </tr>
+                            <tr style="height: 44px;">
+                                <td style="height: 44px;" width="150">Petroleum Engineering</td>
+                                <td style="height: 44px;" width="150">39.5</td>
+                                <td style="height: 44px;" width="150">35.2</td>
+                                <td style="height: 44px;" width="150">26.3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2><i class="fas fa-book-reader"></i>GATE 2021 Counselling</h2>
+                    <hr>
+                    <p>The <strong>Centralized Counseling</strong> for M.Tech./M.Arch./M.Plan. will be organized by the
+                        <strong>CCMT 2021.</strong> The admission will be offered based on candidate’s GATE score of years 2019, 2020 and 2021, in all universities &amp; colleges.</p>
+                    <p>To participate in <a href="">GATE counselling</a>, candidates have to <strong>pay</strong> the <strong>counselling registration fee</strong>. The process for centralized admission to postgraduate programs will start from second week
+                        of <strong>April 2021.</strong>
+                    </p>
+                    <p>The counselling process will be comprised of <strong>three stages</strong> that are online Registration, Choice Filling and Locking of Choices, Online Seat Allotment, Seat Acceptance fee deposit and Physical Reporting at a Reporting
+                        Center (RC) and Getting Admitted to Allotted Institute.</p>
+                    <h2>GATE 2021 Admission</h2>
+                    <hr>
+                    <p>After appearing in the counselling successfully, the candidates can download their <strong>Provisional
+              Admission Letter</strong> (PAL). Candidates have to report physically at the allotted institute for admission.
+                    </p>
+                    <p>The candidates have to report with <strong>DVC</strong> issued by the RC and PAL downloaded from the CCMT-2021 website. They also have to carry the other documents notified by the respective institutes in their website.</p>
+                    <p>Before reporting to allotted institute, the candidates will have to pay <strong>balance admission
+              fee</strong> (if applicable) in the mode prescribed by the respective institutes in their website.</p>
+                    <h2 id="application">GATE 2021 Application Form</h2>
+                    <hr>
+                    <p>Candidates must go through the application <strong>guidelines</strong> which are given below before proceeding for the application form filling:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Candidates have to register and fill the application form through <strong>online</strong> mode at GATE Online Application Processing System (GOAPS).</li>
+                        <li><i class="fas fa-caret-right"></i>The online <a href="">GATE 2021 application
+                form</a> is made available from <strong>11th September 2020</strong> to <strong>8th</strong>
+                            <strong>October 2020.</strong></li>
+                        <li><i class="fas fa-caret-right"></i>Last date to submit the application form with late fee is till <strong>12th October 2020.</strong></li>
+                        <li><i class="fas fa-caret-right"></i>Candidates also have to upload the <strong>certificates</strong>/ <strong>documents</strong>, etc. in online mode only.</li>
+                        <li><i class="fas fa-caret-right"></i>The photograph, signature, certificate of qualifying degree, category certificate (SC/ST/PwD) and/or Dyslexic certificate, wherever applicable, must be uploaded during the online application.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidate can appear in <strong>one or two papers. </strong>Students can appear for two papers as per the <strong>prescribed set of combinations</strong>.</li>
+                        <li><i class="fas fa-caret-right"></i>The candidates should <strong>not send</strong> any hard copy of application form/documents etc. to the conducting institution or any of the zonal GATE offices.</li>
+                    </ul>
+                    <h3>Application Fee:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>The fee can be paid in <strong>electronic</strong> <strong>mode</strong>.</li>
+                        <li><i class="fas fa-caret-right"></i>The application fee is <strong>neither refundable</strong> nor transferable.</li>
+                        <li><i class="fas fa-caret-right"></i>Payments have to be made online by using either net banking or debit card or credit card.</li>
+                        <li><i class="fas fa-caret-right"></i>Check the fee <strong>below</strong>:</li>
+                    </ul>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="193"><strong>For Examination Centres in India</strong></td>
+                                <td width="192"><strong>Application fee</strong></td>
+                                <td width="191"><strong>During the&nbsp;</strong><strong>Extended Period</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="193">Female candidates</td>
+                                <td width="192">Rs. 750</td>
+                                <td width="191">Rs. 1250</td>
+                            </tr>
+                            <tr>
+                                <td width="193">SC/ST/PwD* category candidates</td>
+                                <td width="192">Rs. 750</td>
+                                <td width="191">Rs. 1250</td>
+                            </tr>
+                            <tr>
+                                <td width="193">All other candidates</td>
+                                <td width="192">Rs. 1500</td>
+                                <td width="191">Rs. 2000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" width="577"><strong>For Examination Centres outside India&nbsp;(All Candidates)</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="193">Addis Ababa, Colombo, Dhaka and Kathmandu</td>
+                                <td width="192">US$ 50</td>
+                                <td width="191">US$ 70</td>
+                            </tr>
+                            <tr>
+                                <td width="193">Dubai and Singapore</td>
+                                <td width="192">US$ 100</td>
+                                <td width="191">US$ 120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="eligibility"><i class="fas fa-book-reader"></i>GATE 2021 Eligibility Criteria</h2>
+                    <hr>
+                    <p>Here, candidates can check the <a href="">GATE
+              Eligibility criteria</a> for <strong>various programmes:</strong></p>
+                    <div class="mytable1">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Qualifying Degree</th>
+                                    <th>Qualifying Degree/Examinations</th>
+                                    <th>Eligibility</th>
+                                    <th>Year of Qualification not later than</th>
+                                </tr>
+                                <tr>
+                                    <td>B.E./&nbsp;B.Tech./&nbsp;B.Pharm.</td>
+                                    <td>Bachelor’s degree holders in&nbsp;Engineering/ Technology (4 years after&nbsp;10+2 or 3 years after B.Sc./Diploma in&nbsp;Engineering/Technology)</td>
+                                    <td>Currently in the final&nbsp;year or already&nbsp;completed</td>
+                                    <td>2022</td>
+                                </tr>
+                                <tr>
+                                    <td>B. Arch.</td>
+                                    <td>Bachelor’s degree holders of&nbsp;Architecture (5 years course)/Naval&nbsp;Architecture (4 years course)/Planning (4 years course)</td>
+                                    <td>Currently in the final&nbsp;year or already&nbsp;completed</td>
+                                    <td>2023 (for 5 year) &amp; 2022 (for 4 year)</td>
+                                </tr>
+                                <tr>
+                                    <td>B.Sc. (Research)/&nbsp;B.S.</td>
+                                    <td>Bachelor’s degree in Science&nbsp;(Post-Diploma/4 years after 10+2)</td>
+                                    <td>Currently in the 3rd&nbsp; year or already completed</td>
+                                    <td>2022</td>
+                                </tr>
+                                <tr>
+                                    <td>Pharm. D.&nbsp;(after 10+2)</td>
+                                    <td>Degree holders of 6 years program,&nbsp;consisting of internship or residency&nbsp;training during sixth year</td>
+                                    <td>Currently in the 3rd/4th/5th/6th year or already completed</td>
+                                    <td>2024</td>
+                                </tr>
+                                <tr>
+                                    <td>MBBS</td>
+                                    <td>Degree holders of M.B.B.S. and those who are in the 5th/6h/7th semester of such programme.</td>
+                                    <td>5th, 6th, 7th or already completed</td>
+                                    <td>2022</td>
+                                </tr>
+                                <tr>
+                                    <td>M. Sc./M.A./MCA or equivalent</td>
+                                    <td>Master’s degree in any branch of Science / Mathematics/Statistics/Computer Applications/ Arts or equivalent
+                                    </td>
+                                    <td>Currently in the first year or already completed</td>
+                                    <td>2022</td>
+                                </tr>
+                                <tr>
+                                    <td>Int. M.E./&nbsp;M.Tech.&nbsp;(Post-B.Sc.)</td>
+                                    <td>Post-BSc Integrated Master’s degree&nbsp;programs in Engineering/Technology (4 years program)</td>
+                                    <td>Currently in the&nbsp;2nd/3rd/4th year or&nbsp;already completed</td>
+                                    <td>2023</td>
+                                </tr>
+                                <tr>
+                                    <td>Int. M.E./&nbsp;M.Tech. or Dual Degree (after&nbsp;Diploma or 10+2)</td>
+                                    <td>Integrated Master’s degree program or Dual Degree program in Engineering/Technology (5 years program)
+                                    </td>
+                                    <td>Currently in the 1<sup>st</sup>, 2<sup>nd</sup> or 3<sup>rd</sup> year or already completed</td>
+                                    <td>2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Int. M.Sc./&nbsp;Int. B.S.-M.S.</td>
+                                    <td>Integrated M.Sc. or 5 years&nbsp;integrated B.S.-M.S. program</td>
+                                    <td>Currently in the third year or already completed</td>
+                                    <td>2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Professional&nbsp;Society&nbsp;Examinations (equivalent to&nbsp;B.E./B.Tech./&nbsp;B.Arch.)</td>
+                                    <td>B.E./B.Tech./B.Arch. equivalent examinations of Professional Societies, recognized by MoE/ UPSC/AICTE (e.g., AMIE by Institution of Engineers-India, AMICE by the Institute of Civil Engineers-India and so on)</td>
+                                    <td>Completed Section&nbsp;A or equivalent of&nbsp;such professional&nbsp;courses</td>
+                                    <td>NA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Note:</strong> Candidates who have obtained/are pursuing their qualifying degree from countries other than India:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Must have completed or are in the final year of their Bachelor’s degree (duration: at least 4 years) in Engineering/Technology.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Must have completed or are in the final year of their Post Graduate (Master’s) degree. (duration: at least 2 years) in any relevant subjects in science.</li>
+                    </ul>
+                    <h2 id="correction"><i class="fas fa-book-reader"></i>GATE 2021 Application Form Correction</h2>
+                    <hr>
+                    <p>IIT Bombay has provided the <a href="">GATE Application
+              Correction</a> facility on its official website (<a href="https://www.gate.iitb.ac.in/" target="_blank" rel="nofollow noopener noreferrer">www.gate.iitb.ac.in</a>) through <strong>online&nbsp;</strong>mode. The correction has been provided
+                        in some fields only.</p>
+                    <p>Candidates have to rectify the defects in the application before the <strong>stipulated deadline</strong>. The application form correction can be done till 13th November 2020<strong>. </strong>For some other particulars, it can be
+                        done till 23rd November 2020.</p>
+                    <p>Correction in examination city choice has been re-started from 13th till 15th December 2020.</p>
+                    <p>Failing to rectify the defects within the stipulated time can lead to the <strong>rejection</strong> of the application and no further communication will be entertained in this regard.</p>
+                    <p><span style="color: #ff0000;">If you have any query regarding <strong>GATE 2021,</strong> you can ask your
+              query Please go to Contact Us section.</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card-title">
+                <h2>Exam Schedule</h2>
+                <hr>
+                <div><a href="{% url 'jeemain' %}" style="color:cornflowerblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i
+              class="fas fa-caret-right"></i>JEEMAIN Details</a></div><br>
+                <div><a href="{% url 'gate' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>GATE Details</a></div><br>
+                <div><a href="{% url 'net' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>NET/JRF Details</a></div><br>
+                <div><a href="{% url 'cat' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>CAT Entrance Exam Details</a></div><br>
+                <div><a href="{% url 'schedule' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>DUET Details</a></div>
+            </div>
+        </div>
+    </div>
+    {% endblock gatecontent %}
+
+
+    <!-------------------------------------------- Main Site Footer Section -------------------------------------------->
+    {% include 'books/footer.html' %}
+
+    <!-------------------------------------------- Main Site JSQuery Section ------------------------------------------->
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

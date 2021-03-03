@@ -1,0 +1,578 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT Exam Schedule</title>
+
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- schedule Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Header/Blog Title */
+        
+        .row-cat {
+            margin: auto 7rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Add a card effect for articles */
+        
+        .card-title {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row-cat:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* ----------------- Site Content --------------------- */
+        
+        .ui-button-text {
+            border: #333;
+            padding-right: 1rem;
+            color: #11609a;
+            font-size: 26px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        .entry a {
+            color: #ff0000;
+        }
+        
+        .entry {
+            color: #090909;
+            font: 15px/25px Georgia, "Times New Roman", Times, serif;
+        }
+        
+        .entry p {
+            color: #282828;
+            font-family: Georgia, Sans-serif;
+            margin: 0 0 15px;
+        }
+        
+        .entry h2 {
+            color: #222;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            font-weight: 700 !important;
+            line-height: 33px;
+            margin: 0 0 6px;
+        }
+        
+        .mytable1 {
+            overflow-x: scroll;
+        }
+        
+        ul {
+            margin: -4px 0 18px 18px;
+        }
+        
+        li {
+            border-top: #282828 5px;
+        }
+        
+        .entry h3 {
+            font-size: 14px;
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section ----------------------------------------->
+    {% include 'books/navbar.html' %}
+
+    <!-------------------------------------------- Main Site Content Section ---------------------------------------------->
+    {% block catcontent %}
+
+    <div class="row-cat">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+
+                    <h1>CAT 2021: Result (Declared), Cut off (Out), Admission Procedure</h1>
+                </div>
+                <div class="entry">
+
+
+                    <p><strong>CAT 2020 Result</strong> has been&nbsp;
+                        <strong>declared</strong> on <strong>2nd January 2021</strong>. Indian Institutes of Management (IIMs) has organized the<strong> CAT 2021</strong> exam. It is computer based admission test conducted for admissions in PG &amp; Fellow
+                        management programmes offered by IIMs all over the country. Various B Schools and other management instituions in India will consider the CAT score for providing admission in
+                        <strong>MBA, PGDM &amp; other PG management</strong> courses.
+                    </p>
+                    <p>CAT refers to Common Admission Test which is one of the most sought exam for management courses. It is organized only <strong>once in a year</strong>. Students appearing for CAT 2021 exam can check complete details from below including
+                        notification, dates, application, pattern etc.</p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: center;"><a id="uibtn6" target="_self" href="#dates" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>ExamDates</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn6',
+                                    'href': '#dates',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn7" target="_self" href="#key" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Answer-Key</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn7',
+                                    'href': '#key',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn8" target="_self" href="#result" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Result</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn10',
+                                    'href': '#result',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn11" target="_self" href="#adm" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Admission</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn11',
+                                    'href': '#adm',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <p>&nbsp;</p>
+                    <h2 id="dates" class="_mPS2id-t"><i class="fas fa-book-reader"></i>CAT 2021 Exam Dates</h2>
+                    <hr>
+                    <p><a href="">CAT Exam Dates</a> for 2021 session has been announced. Students can check the <strong>official</strong>&nbsp;schedule given below:</p>
+                    <table class="mytable1" style="width: 100%; height: 242px;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422"><strong>Events</strong></td>
+                                <td style="width: 47.7902%; height: 22px;" width="413"><strong>Dates</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Release of CAT 2020 Notification</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">29th July 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Starting of Online Registration</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">5th August 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Last date to fill the application form</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">23rd September 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;">Correction window</td>
+                                <td style="width: 47.7902%; height: 22px;">27th to 29th September 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Release of Admit card</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">28th October 2020</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 51.1619%;">Mock Test</td>
+                                <td style="width: 47.7902%;">6th November 2020<strong><br> </strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">CAT 2020 Exam</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">29th November 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Release of Answer Key</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">8th December 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;">Last date to submit objection</td>
+                                <td style="width: 47.7902%; height: 22px;">11th December 2020</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 51.1619%;">Revised Answer Key</td>
+                                <td style="width: 47.7902%;">30th December 2020</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 51.1619%; height: 22px;" width="422">Announcement of Results</td>
+                                <td style="width: 47.7902%; height: 22px;" width="413">2nd January 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2><i class="fas fa-book-reader"></i>CAT 2021 Exam Summary</h2>
+                    <hr>
+                    <table class="mytable1" style="width: 66.75187702922078%; height: 132px;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Exam Name</strong></td>
+                                <td style="height: 22px;" width="300">CAT (Common Admission Test)</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Courses</strong></td>
+                                <td style="height: 22px;" width="300">PG Management (MBA/PGDM)</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Conducting Body</strong></td>
+                                <td style="height: 22px;" width="300">Indian Institutes of Management</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Level</strong></td>
+                                <td style="height: 22px;" width="300">National Level Exam</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Exam Mode</strong></td>
+                                <td style="height: 22px;" width="300">CBT (Computer Based Test)</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="height: 22px;" width="300"><strong>Exam Date</strong></td>
+                                <td style="height: 22px;" width="300">29th November 2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="key" class="_mPS2id-t"><i class="fas fa-book-reader"></i>CAT Answer Key</h2>
+                    <hr>
+                    <p>The exam conducting authority has release the answer key through online mode. <strong>CAT 2021 answer
+              key</strong> is made available within a week after the examination.</p>
+                    <p>Candidates can access the answer key using their <strong>CAT ID and password</strong> through login. The authority has also provide the facility to challenge the answer key.</p>
+                    <p>Candidates have to pay Rs.1200 per question to challenge the answer key. The responses has been also released along with the answer key.</p>
+                    <h2 id="result" class="_mPS2id-t">CAT 2021 Result</h2>
+                    <hr>
+                    <p>The result has been declared on <strong>2nd</strong> <strong>January 2021</strong>. Candidates can access CAT Score card through the website.</p>
+                    <p>The score card will be valid till the last week of December 2021. There is no offline mode available to check the result.</p>
+                    <p><strong>CAT result 2021</strong> contains detailed sectional and overall scaled scores and percentiles. Candidates must make sure to take printout of the score card for further admission procedure.</p>
+                    <h2>CAT Normalization Procedure</h2>
+                    <hr>
+                    <p>CAT exam will be conducted in two sessions to ensure equity in comparison of performance of candidates a normalization procedure will be done.</p>
+                    <p>The exam conducting authority will use the formula same applied for GATE to normalize the CAT scores. The scaled score of each section along with percentiles will be declared along with the result.</p>
+                    <h2 id="cut" class="_mPS2id-t">CAT Cut Off 2021</h2>
+                    <hr>
+                    <p>The cut-off is the minimum marks of percentile required by the candidates in order to get shortlisted by the participating institutions. CAT 2021 cut-off has been released separately category wise. Candidates can check the last year
+                        cut-off from below:</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="120"><strong>Institution</strong></td>
+                                <td width="120"><strong>General</strong></td>
+                                <td width="120"><strong>OBC-NC</strong></td>
+                                <td width="120"><strong>SC</strong></td>
+                                <td width="120"><strong>ST</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="120">IIM, Ahmedabad</td>
+                                <td width="120">80</td>
+                                <td width="120">75</td>
+                                <td width="120">70</td>
+                                <td width="120">60</td>
+                            </tr>
+                            <tr>
+                                <td width="120">IIM, Bangalore</td>
+                                <td width="120">90</td>
+                                <td width="120">80</td>
+                                <td width="120">75</td>
+                                <td width="120">70</td>
+                            </tr>
+                            <tr>
+                                <td width="120">IIM, Calcutta</td>
+                                <td width="120">90</td>
+                                <td width="120">85</td>
+                                <td width="120">70</td>
+                                <td width="120">70</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="adm" class="_mPS2id-t"><i class="fas fa-book-reader"></i>CAT Admission Procedure</h2>
+                    <hr>
+                    <p>No centralized counselling or admission procedure will be conducted for admission in IIMs. Each IIM will conduct their own admission process for providing admissions.</p>
+                    <p><strong>CAT 2021 admission process</strong> will be started after the declaration of result. Admissions in IIMs will be done on the basis of <strong>CAT scores, written ability test, group discussion and personal
+              interview</strong>.</p>
+                    <p>IIMs will release their separate cut-off for providing admissions. Candidates will receive call letters in their registered Email ID. Candidates are required to report to the IIMs as per the allotted schedule.</p>
+
+                    <h2 id="form"><i class="fas fa-book-reader"></i>CAT Registration 2021</h2>
+                    <hr>
+                    <p>Here we have given important instructions to fill the <a href="">CAT 2021 Application Form</a>:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Registration can be done through the website.</li>
+                        <li><i class="fas fa-caret-right"></i>Registration window has been opened from <strong>5th August 2020</strong>.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates must ensure that they have a working <strong>mobile number and Email ID</strong> for CAT 2021 registration.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Firstly, candidates will have to register to generate their unique User ID and password.</li>
+                        <li><i class="fas fa-caret-right"></i>The last date to submit application form is <strong>23rd September 2020.</strong></li>
+                        <li><i class="fas fa-caret-right"></i>Candidates must login with the generated ID details to fill the application form.</li>
+                        <li><i class="fas fa-caret-right"></i>After entering details &amp; making fee payment, candidates submit the application to complete the registration process.</li>
+                        <li><i class="fas fa-caret-right"></i>Authority has also provided correction facility from <strong>27th to 29th September 2020.</strong></li>
+                        <li><i class="fas fa-caret-right"></i>Scanned images of <strong>passport size photograph and signature</strong> are required for uploading.
+                        </li>
+                    </ul>
+                    <h3>Registration Fee:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>The registration fee will be <strong>Rs.1000</strong> for SC, ST and PwD and <strong>Rs. 2000</strong> for all other candidates.</li>
+                        <li><i class="fas fa-caret-right"></i>Registration fee is non refundable.</li>
+                        <li><i class="fas fa-caret-right"></i>Processing fee will also be charged.</li>
+                        <li><i class="fas fa-caret-right"></i>The fee payment can be done through <strong>debit/credit card, net banking or UPI</strong>.</li>
+                    </ul>
+                    <h2><i class="fas fa-book-reader"></i>CAT Application Correction</h2>
+                    <hr>
+                    <p>The authority has also provided <a href="">CAT Application
+              Correction</a> facility to make changes in images uploaded in the application form. Students can correct their uploaded images from<strong> 27th September 2020</strong>.</p>
+                    <p>Candidates are required to login to the students dashboard. After login, candidates can upload their correct images. Corrections in other details of the application form is not allowed by the authority.</p>
+                    <h2><i class="fas fa-book-reader"></i>CAT Registration Trends</h2>
+                    <hr>
+                    <p>Below we have provided the previous year trends of CAT examination:</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="200"><strong>Year</strong></td>
+                                <td width="200"><strong>No. of Registration</strong></td>
+                                <td width="200"><strong>No. of Test Takers</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="200">2018</td>
+                                <td width="200">2,40,338</td>
+                                <td width="200">2,09,405</td>
+                            </tr>
+                            <tr>
+                                <td width="200">2017</td>
+                                <td width="200">231,000</td>
+                                <td width="200">1,99,632</td>
+                            </tr>
+                            <tr>
+                                <td width="200">2016</td>
+                                <td width="200">2,32,434</td>
+                                <td width="200">1,95,000</td>
+                            </tr>
+                            <tr>
+                                <td width="200">2015</td>
+                                <td width="200">2,18,664</td>
+                                <td width="200">1,79,602</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="eligibility"><i class="fas fa-book-reader"></i>CAT Eligibility Criteria</h2>
+                    <hr>
+                    <p>Candidates must check the <a href="">CAT Eligibility
+              criteria</a> given below before applying for the exam.</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Exam: Bachelor degree</strong> or equivalent with minimum <strong>50%</strong> (45% for reserved categories).</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Appearing Candidates:</strong> Candidates appearing in the final year of bachelor degree are also eligible to apply</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates holding professional degrees like <strong>CA/ CS/ ICWA</strong> can also apply.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Age Limit:</strong> There will be no age or attempt limit to apply for CAT.</li>
+                    </ul>
+                    <h2>CAT 2021 Admit Card</h2>
+                    <hr>
+                    <p>The <strong>admit card</strong> has been made available to download on <strong>28th&nbsp;October
+              2020</strong>. CAT admit card 2021 can be downloaded by entering ID and password.</p>
+                    <p>Candidates must check all details like name, photograph, signature &amp; other details mentioned in the admit card. In case of any mistake, they should contact to the CAT officials to get it rectified.</p>
+                    <p>Candidates have to carry <strong>one ID proof</strong> along with admit card. Candidates keep the admit card safe till their admissions are completed.</p>
+
+                    <h2 id="pattern"><i class="fas fa-book-reader"></i>CAT 2021 Exam Pattern</h2>
+                    <hr>
+                    <p>Here candidates can check <a href="">CAT Exam pattern</a> in the below given section:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Exam Mode:</strong> The exam will be conducted through <strong>online mode</strong> (computer based test).</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Type of Questions:</strong> Both <strong>objective and subjective</strong> questions will be asked in the exam.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Duration:</strong> Total <strong>two hours</strong> (120 minutes) will be given to solve the question paper.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Test Centres:</strong> The exam will be organized around 156 cities. Name of the test centre will be mentioned in the admit card.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marking Scheme: Three marks</strong> will be given for each correct answer.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Negative Marking:</strong> One mark will be deducted for each wrong answer in the objective type section. No negative marking will be done in the subjective section.</li>
+                    </ul>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="139"><strong>Section</strong></td>
+                                <td width="123"><strong>No. of MCQs</strong></td>
+                                <td width="102"><strong>No. of Non MCQs</strong></td>
+                                <td width="122"><strong>Duration</strong></td>
+                                <td width="116"><strong>Total Marks</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="139">Verbal Ability and Reading Comprehension (Section I)</td>
+                                <td width="123">24</td>
+                                <td width="102">10</td>
+                                <td width="122">1 hour</td>
+                                <td width="116">102</td>
+                            </tr>
+                            <tr>
+                                <td width="139">Data Interpretation and Logical Reasoning (Section II)</td>
+                                <td width="123">24</td>
+                                <td width="102">8</td>
+                                <td width="122">1 hour</td>
+                                <td width="116">96</td>
+                            </tr>
+                            <tr>
+                                <td width="139">Quantitative Ability (Section III)</td>
+                                <td width="123">27</td>
+                                <td width="102">7</td>
+                                <td width="122">1 hour</td>
+                                <td width="116">102</td>
+                            </tr>
+                            <tr>
+                                <td width="139"><strong>Total</strong></td>
+                                <td width="123"><strong>75</strong></td>
+                                <td width="102"><strong>25</strong></td>
+                                <td width="122"><strong>3 hours</strong></td>
+                                <td width="116"><strong>300</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="syllabus"><i class="fas fa-book-reader"></i>CAT Syllabus 2021</h2>
+                    <hr>
+                    <p><a href="">CAT Syllabus</a> 2021 has been divided into
+                        <strong>three sections</strong>, i.e. Data Interpretation &amp; Logical Reasoning, Verbal Ability &amp; Reading Comprehension &amp; Quantitative Ability. The detailed syllabus for these sections are provided below:
+                    </p>
+                    <p><strong>Data Interpretation &amp; Logical Reasoning:</strong> Caselets and Tables, Venn Diagrams, Combination of two or more types linked to each other, Calendars, Cubes and Clocks, Seating Arrangement, Syllogism, Blood Relations,
+                        Bar Graphs and Column Graphs, Line Charts &amp; Pie Chart, Number and Letter Series, Binary Logic, Logical Matching, Connectives &amp; Sequence.</p>
+                    <p><strong>Verbal Ability &amp; Reading Comprehension:</strong> Synonyms Antonyms (Vocabulary Based), Correction in Sentence, Reading Comprehension, Jumbled Paragraph and Close Passage, Analogies and Reverse Analogies, Facts Inferences
+                        Judgements, Grammar or English Usage, Fill in the blanks, Verbal Reasoning, Meaning/Usage Match, Summary Questions.</p>
+                    <p><strong>Quantitative Ability:</strong> Number Systems, LCM &amp; HCF, Speed, Time &amp; Distance, Time &amp; Work, Ratio &amp; Proportion, Averages, Coordinate Geometry &amp; Mensuration, Sequences &amp; Series, Surds &amp; Indices,
+                        Inequalities, Set Theory, Functions &amp; Geometry, Mixtures &amp; Allegations, Trigonometry, Profit, Loss &amp; Discount, Percentages, Simple &amp; Compound Interest, Logarithm, Binomial Theorem, Complex Numbers, Quadratic &amp;
+                        Linear Equations, Probability, Permutation and Combination.</p>
+                    <h2>How to Prepare for CAT</h2>
+                    <hr>
+                    <p>Candidates can take help of below given <a href="">CAT Preparation tips</a>:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>The first thing you have to do is to gather details about the exam pattern and syllabus.</li>
+                        <li><i class="fas fa-caret-right"></i>Get the right study materials like books, sample papers etc for preparations.</li>
+                        <li><i class="fas fa-caret-right"></i>Go through the previous year question papers to know the pattern and weightage of questions.</li>
+                        <li><i class="fas fa-caret-right"></i>Take online mock tests of CAT from the official and other websites too.</li>
+                        <li><i class="fas fa-caret-right"></i>Make a study group and discuss your strategies, problems etc.</li>
+                        <li><i class="fas fa-caret-right"></i>Make sure to complete your preparations 15 days before the exam day. And do not try any new topic after that.
+                        </li>
+                    </ul>
+                    <p><strong>Also Check:</strong></p>
+                    <p><a href="" target="_blank" rel="noopener noreferrer">CAT Books</a></p>
+                    <p><span style="color: #ff0000;">If you have any other queries related to <strong>CAT 2021</strong>, you can
+              Refer to Contact us Section.</span></p>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card-title">
+                <h2>Exam Schedule</h2>
+                <hr>
+                <div><a href="{% url 'jeemain' %}" style="color:cornflowerblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i
+              class="fas fa-caret-right"></i>JEEMAIN Details</a></div><br>
+                <div><a href="{% url 'gate' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>GATE Details</a></div><br>
+                <div><a href="{% url 'net' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>NET/JRF Details</a></div><br>
+                <div><a href="{% url 'cat' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>CAT Entrance Exam Details</a></div><br>
+                <div><a href="{% url 'schedule' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>DUET Details</a></div>
+            </div>
+        </div>
+    </div>
+    {% endblock catcontent %}
+
+    <!-------------------------------------------- Main Site Footer Section ---------------------------------------------->
+    {% include 'books/footer.html' %}
+
+    <!-------------------------------------------- Main Site JSQuery Section --------------------------------------------->
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

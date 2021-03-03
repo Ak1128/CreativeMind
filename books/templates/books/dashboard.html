@@ -1,0 +1,984 @@
+<!DOCTYPE html> {% load static %}
+<html>
+<!-------------------------------------------- Main Site Navigation Section ------------------------------------->
+
+{% block nav %} {% include 'books/navbar.html' %} {% endblock %}
+
+<!-------------------------------------------- Main Site Js/Css Section ---------------------------------------->
+
+{% block content %}
+
+<!-- Custom Style Sheet For Fontawsome -->
+<link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+<!-- Owl Carousal -->
+
+<!-- ------------ AOS Library ------------------------- -->
+<link rel="stylesheet" href="{% static '/css/aos.css' %}">
+<link rel="stylesheet" href="{% static '/css/dashboardtable.css' %}">
+<script src="{% static '/js/dashboardjquery1_7_1.js' %}"></script>
+<script src="{% static '/js/Dashboardtable.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+<!-------------------------------------------- Main Site Default Style Section ---------------------------------------->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    .mytable1 {
+        overflow-x: scroll;
+    }
+    
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    /* Header/Blog Title */
+    
+    .row-dashboard {
+        margin: auto 7rem;
+        padding: 0;
+        display: block;
+        top: 100rem;
+    }
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    
+    .leftcolumn {
+        float: left;
+        width: 75%;
+    }
+    /* Right column */
+    
+    .rightcolumn {
+        float: left;
+        width: 25%;
+        padding-left: 20px;
+    }
+    /* Add a card effect for articles */
+    
+    .card-title {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    /* Clear floats after the columns */
+    
+    .row-dashboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .table_button {
+        border-radius: 2px;
+        background-color: brown;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px 10px;
+        width: 100%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 0px;
+    }
+    
+    .table_button a {
+        cursor: pointer;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .table_button a:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .table_button:hover a {
+        padding-right: 25px;
+    }
+    
+    .table_button:hover a:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .book_lib {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .book_lib a {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        color: brown;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .book_lib li {
+        text-decoration: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    /* Footer */
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    
+    .icon-bar {
+        position: fixed;
+        top: 50%;
+        background-color: #000;
+        border: none;
+        border-radius: 0rem 3rem 3rem 0rem;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    
+    .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Content Section ---------------------------------------->
+    <div class="row-dashboard">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+                    <h1 style="color:chocolate;">||- Free Download Book / Question Paper / Notes -||</h1>
+                    <hr>
+                    <hr>
+                </div>
+                <div class="entry">
+                    <div class="gate">
+                        <h2 style="color:brown"><i class="fas fa-book-reader" style="padding-right: 1rem;"></i><a href="#gate" style="color: brown;">|| GATE (Physical Science) ||</a></h2>
+                        <hr>
+                        <br>
+                        <h3>|| Gate Previous Years ||</h3>
+                        <br>
+                        <div class="container-table">
+                            <table id="myTable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no</th>
+                                        <th>Exam</th>
+                                        <th>Previous Years</th>
+                                        <th>Free Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01 </td>
+                                        <td>GATE</td>
+                                        <td>Gate_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/PH_2019.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/PH_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2018.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2018_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2017.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>06</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2017_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2016.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2016_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2015.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2015_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2014(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2014.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2014(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2014_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2013(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2013.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2013(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2013_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2012(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2012.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2012(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2012_key.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2011(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2011.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>GATE</td>
+                                        <td>Gate_2010(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static 'pdfs/GATE/GATE_2010.pdf' %}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable').dataTable();
+                        });
+                    </script>
+
+                    <br>
+                    <div class="net">
+                        <h2 style="color:brown"><i class="fas fa-book-reader" style="padding-right: 1rem;"></i><a href="#net" style="color: brown;">|| NET (Physical Science) ||</a></h2>
+                        <hr>
+                        <br>
+                        <h3>|| NET Previous Years ||</h3>
+                        <br>
+
+                        <div class="container-table">
+                            <table id="myTable1" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no</th>
+                                        <th>Exam</th>
+                                        <th>Previous Years</th>
+                                        <th>Free Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01 </td>
+                                        <td>NET</td>
+                                        <td>NET_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2019'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02 </td>
+                                        <td>NET</td>
+                                        <td>NET_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2019B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03 </td>
+                                        <td>NET</td>
+                                        <td>NET_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2019C'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>04 </td>
+                                        <td>NET</td>
+                                        <td>NET_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2019D'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05 </td>
+                                        <td>NET</td>
+                                        <td>NET_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2018'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>06 </td>
+                                        <td>NET</td>
+                                        <td>NET_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2018B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07 </td>
+                                        <td>NET</td>
+                                        <td>NET_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2018C'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08 </td>
+                                        <td>NET</td>
+                                        <td>NET_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2018D'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09 </td>
+                                        <td>NET</td>
+                                        <td>NET_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2017B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10 </td>
+                                        <td>NET</td>
+                                        <td>NET_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2017C'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11 </td>
+                                        <td>NET</td>
+                                        <td>NET_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2017D'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12 </td>
+                                        <td>NET</td>
+                                        <td>NET_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2017E'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13 </td>
+                                        <td>NET</td>
+                                        <td>NET_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2016'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14 </td>
+                                        <td>NET</td>
+                                        <td>NET_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2016B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15 </td>
+                                        <td>NET</td>
+                                        <td>NET_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2016C'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>16 </td>
+                                        <td>NET</td>
+                                        <td>NET_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2016D'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>17 </td>
+                                        <td>NET</td>
+                                        <td>NET_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2015'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 </td>
+                                        <td>NET</td>
+                                        <td>NET_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2015B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>NET</td>
+                                        <td>NET_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2015C'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>NET</td>
+                                        <td>NET_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2015D'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>21 </td>
+                                        <td>NET</td>
+                                        <td>NET_2014(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2014'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>22 </td>
+                                        <td>NET</td>
+                                        <td>NET_2014(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/NET/NET_2014B'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable1').dataTable();
+                        });
+                    </script>
+
+                    <div class="tier">
+                        <h2 style="color:brown"><i class="fas fa-book-reader" style="padding-right: 1rem;"></i><a href="#tifr" style="color: brown;">|| TIFR (Physical Science) ||</a></h2>
+                        <hr>
+                        <br>
+                        <h3>|| TIFR Previous Years ||</h3>
+                        <br>
+                        <div class="container-table">
+                            <table id="myTable2" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no</th>
+                                        <th>Exam</th>
+                                        <th>Sample Paper</th>
+                                        <th>Free Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2019_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2019(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2019_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2018(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2018_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2017(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2017_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>04 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2016(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2016_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2015(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2015_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>06 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2014(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2014_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2013(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2013_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2012(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2012_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09 </td>
+                                        <td>TIFR</td>
+                                        <td>TIFR_2011(Physical Science)</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/TIFR/TIFR_2011_PHYSICS.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable2').dataTable();
+                        });
+                    </script>
+                    <div class="jest">
+                        <h2 style="color:brown"><i class="fas fa-book-reader" style="padding-right: 1rem;"></i><a href="#jest" style="color: brown;">|| JEST (Physical Science) ||</a></h2>
+                        <hr>
+                        <br>
+                        <h3>|| JEST Previous Years ||</h3>
+                        <br>
+                        <div class="container-table">
+                            <table id="myTable3" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no</th>
+                                        <th>Exam</th>
+                                        <th>Sample Paper</th>
+                                        <th>Free Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01 </td>
+                                        <td>JEST</td>
+                                        <td>Mathematical_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Mathematical_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02 </td>
+                                        <td>JEST</td>
+                                        <td>NUclear_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Nuclear_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03 </td>
+                                        <td>JEST</td>
+                                        <td>Optics_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Optics_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>04 </td>
+                                        <td>JEST</td>
+                                        <td>Quantum_Mechanics_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Quantum_M_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05 </td>
+                                        <td>JEST</td>
+                                        <td>Solid_State_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Solid_State_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>06 </td>
+                                        <td>JEST</td>
+                                        <td>Thermodyanmics_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Thermodyanmics_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07 </td>
+                                        <td>JEST</td>
+                                        <td>Atomic_Molecular_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Atomic_Molecular_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08 </td>
+                                        <td>JEST</td>
+                                        <td>Classical_Mechanics_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Classical_Mechanics_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09 </td>
+                                        <td>JEST</td>
+                                        <td>Electromagnetic_2012-2019</td>
+                                        <td>
+                                            <div class="table_button">
+                                                <a type="button" href="{% static '/pdfs/JEST/Electromagnetic_2012-2019.pdf'%}">Download</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable3').dataTable();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card-title">
+                <div class="headline">
+                    <h2 style="color: chocolate;"> Book Library </h2>
+                    <hr>
+                    <div class="book_lib">
+                        <li><a id="uibtn10" target="_self" href="#gate"><span></span><span
+                       class="ui-button-text"><i class="fas fa-hand-point-right" style="padding-right: 1rem;"></i>GATE</span></a></li>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn10',
+                                    'href': '#gate',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <li><a id="uibtn11" target="_self" href="#tifr"><span></span><span
+                      class="ui-button-text"><i class="fas fa-hand-point-right" style="padding-right: 1rem;"></i>TIFR</span></a></li>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn11',
+                                    'href': '#tifr',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <li><a id="uibtn12" target="_self" href="#jest"><span></span><span
+                    class="ui-button-text"><i class="fas fa-hand-point-right" style="padding-right: 1rem;"></i>JEST</span></a></li>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn12',
+                                    'href': '#jest',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <li><a id="uibtn13" target="_self" href="#net"><span></span><span
+                      class="ui-button-text"><i class="fas fa-hand-point-right" style="padding-right: 1rem;"></i>NET</span></a></li>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn13',
+                                    'href': '#net',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <li><a id="uibtn14" target="_self" href="#physics"><span></span><span
+                    class="ui-button-text"><i class="fas fa-hand-point-right" style="padding-right: 1rem;"></i>PHYSICS IMPORTANT</span>
+                    </a>
+                        </li>
+
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn14',
+                                    'href': '#physics',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock%}
+
+    <!-------------------------------------------- Main Site Footer Section ---------------------------------------->
+    {% block footer %} {% include 'books/footer.html' %}
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+
+    {% endblock %}
+</body>
+
+</html>

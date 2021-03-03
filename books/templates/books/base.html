@@ -1,0 +1,209 @@
+<!DOCTYPE html> {% load static %}
+
+<script src="{% static '/js/fontawsomekit.js' %}"></script>
+<link rel="stylesheet" href="{% static '/css/fontawsome.min.css' %}">
+<script src="{% static '/js/base.js' %}"></script>
+<script src="{% static '/js/typed.js' %}"></script>
+<link rel="stylesheet" href="{% static '/css/base.css' %}">
+
+
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            // sticky navbar on scroll script
+            if (this.scrollY > 20) {
+                $('.navbar').addClass("sticky");
+            } else {
+                $('.navbar').removeClass("sticky");
+            }
+
+            // scroll-up button show/hide script
+            if (this.scrollY > 500) {
+                $('.scroll-up-btn').addClass("show");
+            } else {
+                $('.scroll-up-btn').removeClass("show");
+            }
+        });
+
+        // slide-up script
+        $('.scroll-up-btn').click(function() {
+            $('html').animate({
+                scrollTop: 0
+            });
+            // removing smooth scroll on slide-up button click
+            $('html').css("scrollBehavior", "auto");
+        });
+
+        $('.navbar .menu li a').click(function() {
+            // applying again smooth scroll on menu items click
+            $('html').css("scrollBehavior", "smooth");
+        });
+
+        // toggle menu/navbar script
+        $('.menu-btn').click(function() {
+            $('.navbar .menu').toggleClass("active");
+            $('.menu-btn i').toggleClass("active");
+        });
+
+        // typing text animation script
+        var typed = new Typed(".typing", {
+            strings: ["YouTuber", "Developer", "Designer", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+
+        var typed = new Typed(".typing-2", {
+            strings: ["YouTuber", "Developer", "Designer", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+        var typed = new Typed(".typing-3", {
+            strings: ["Python", "Web Scraping", "Data Science", "Machine Learning"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+
+    });
+</script>
+
+<div class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+</div>
+<nav class="navbar">
+    <div class="max-width">
+        <div class="logo">
+            <a href="#"><i class="fab fa-contao"></i> reative<i class="fab fa-mix" style=" padding-left:1.5rem;"></i> inds</a></div>
+        <ul class="menu">
+            <li><a href="{% url 'base' %}" class="m"><i class="fas fa-home" style="padding-right: .5rem;"></i> Home</a></li>
+            <li><a href="{% url 'register' %}" class="m">Sign Up <i class="fas fa-sign-in-alt" style="padding-left: .5rem;"></i></a></li>
+            <li><a href="{% url 'login' %}" class="menu-btn">Login <i class="fas fa-user" style="padding-left: .5rem;"></i></a></li>
+        </ul>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- home section start -->
+<section class="home" id="home">
+    <div class="max-width">
+        <div class="home-content">
+            <div class="text-1">
+                Hello, my name is</div>
+            <div class="text-2">
+                Kamal Singh</div>
+            <div class="text-3">
+                And I'm a <span class="typing"></span></div>
+            <a href="{% url 'register' %}">Download Books Free</a>
+        </div>
+    </div>
+</section>
+
+<!-- about section start -->
+<div class="about_contact">
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">
+                About me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="{% static '/assets/baseabout.jpg' %}" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text">
+                        I'm Kamal Singh and I'm a <span class="typing-2"></span></div>
+                    <p>Self-motivated and hardworking graduate seeking an opportunity to work in a challenging environment. With an opportunity of working with a diverse group of people and enhancing my professional skills with learning and experience for
+                        growth. In this website you will get All Kinds of Books and Sample papers for Competative Exams .
+                        <br><br> Even You Can learn Courses For Free <span class="typing-3" style="color:red; font-size: 25px;
+                        margin-bottom: 3rem;
+                        font-weight: 600;"></span>
+                    </p>
+
+                    <p><i class="fab fa-youtube" style="color: red;"></i> You Tube Channel For Free Learning
+                    </p>
+                    <button class="Resume"><a href="#">Download CV</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">
+                Contact me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">
+                        <h3>Get in Touch </h3>
+                    </div>
+                    <p> For any Query Realted to Books or any type of Query Please Contact Us . <br>
+                        <br>This Website is only for Students Preparing For Exam's such as CAT // GATE // NET // JRF // JEST // DUET // JEEMAIN etc. can Contact.
+
+                    </p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">
+                                    Name</div>
+                                <div class="sub-title">
+                                    Kamal Singh</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">
+                                    Delhi-110009</div>
+                                <div class="sub-title">
+                                    GTB Nagar
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">
+                                    Email</div>
+                                <div class="sub-title">
+                                    creativemind1128@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">
+                        Message me</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <!-- Due to more textarea, I got an error so I changed the tag name of this textarea into changeit. -->
+                            <changeit cols="30" rows="10" placeholder="Message.." required></changeit>
+                        </div>
+                        <div class="button">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- footer section start -->
+<footer>
+    <span>Created By || <a href="">Creative Minds</a> || <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+</footer>

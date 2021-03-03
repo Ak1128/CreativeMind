@@ -1,0 +1,520 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC NET Exam Schedule</title>
+
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- schedule Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Header/Blog Title */
+        
+        .row-net {
+            margin: auto 7rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Fake image */
+        
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+        /* Add a card effect for articles */
+        
+        .card-title {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row-net:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* ----------------- Site Content --------------------- */
+        
+        .ui-button-text {
+            border: #333;
+            color: #11609a;
+            font-size: 26px;
+            padding-right: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        .entry a {
+            color: #ff0000;
+        }
+        
+        .entry {
+            color: #090909;
+            font: 15px/25px Georgia, "Times New Roman", Times, serif;
+        }
+        
+        .entry p {
+            color: #282828;
+            font-family: Georgia, Sans-serif;
+            margin: 0 0 15px;
+        }
+        
+        .entry h2 {
+            color: #222;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            font-weight: 700 !important;
+            line-height: 33px;
+            margin: 0 0 6px;
+        }
+        
+        .mytable1 {
+            overflow-x: scroll;
+        }
+        
+        ul {
+            margin: -4px 0 18px 18px;
+        }
+        
+        li {
+            border-top: #282828 5px;
+        }
+        
+        .entry h3 {
+            font-size: 14px;
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section -------------------------------------->
+    {% include 'books/navbar.html' %}
+
+    <!-------------------------------------------- Main Site Content Section ------------------------------------------>
+    {% block netcontent %}
+    <div class="row-net">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+                    <h1>UGC NET 2021: Application Form (Released), Exam Dates (Out), Eligibility</h1>
+                </div>
+
+                <div class="entry">
+                    <p><strong>UGC NET 2021</strong>&nbsp;<strong>Application Form</strong> has been released on <strong>2nd February 2021.</strong>&nbsp;Exam date has been announced. The exam will be held on <strong>2nd, 3rd, 4th, 5th, 6th, 7th, 10th, 11th, 12th, 14th &amp; 17th May 2021.</strong>                        UGC NET is a national level entrance test which will be organized by NTA. Through UGC NET exam, the eligibility will be determined for <strong>JRF (Junior Research Fellowship)</strong> <strong>&amp; Assistant Professor
+            </strong>and for<strong> Assistant Professor </strong>only. Candidates who will successfully qualify the test will be considered for recruitment as Assistant Professor or JRF in Indian Universities and Colleges. The application process for
+                        June session exam starts in the month of March 2021 and in the month of September 2021 for December session exam. In this article we have provided complete details related to UGC NET 2021 application form, exam dates, eligibility
+                        criteria, exam pattern, etc.</p>
+
+                    <p></p>
+                    <p style="text-align: center;"><a id="uibtn2" target="_self" href="#dates" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam-Dates</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn2',
+                                    'href': '#dates',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn3" target="_self" href="#application" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Application-Form</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn3',
+                                    'href': '#application',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn4" target="_self" href="#eligibility" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Eligibility</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn4',
+                                    'href': '#eligibility',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <p style="text-align: center;"><a id="uibtn5" target="_self" href="#pattern" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam-Pattern</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn5',
+                                    'href': '#pattern',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn7" target="_self" href="#syllabus" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Syllabus</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn7',
+                                    'href': '#syllabus',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <h2 id="dates" class="_mPS2id-t"><i class="fas fa-book-reader"></i>UGC NET 2021 Exam Dates</h2>
+                    <hr>
+                    <p>To know all the events of UGC NET 2021, candidates can go through <a href="">UGC NET Exam Dates</a> in the below given table:
+                    </p>
+                    <table class="mytable1" style="width: 77.15972222222221%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169"><strong>Events</strong></td>
+                                <td style="width: 56.72268907563026%;" width="377"><strong>Dates 2021 (December Cycle)</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Availability of Online Application</td>
+                                <td style="width: 56.72268907563026%;" width="174">2nd February 2021</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Last date to apply online</td>
+                                <td style="width: 56.72268907563026%;" width="174"><strong>2nd March 2021&nbsp;</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Correction window opens</td>
+                                <td style="width: 56.72268907563026%;" width="174"><strong>5th to 9th March 2021&nbsp;</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Availability of Admit card</td>
+                                <td style="width: 56.72268907563026%;" width="174"><strong>March/ April 2021</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">UGC NET 2021</td>
+                                <td style="width: 56.72268907563026%;" width="174"><strong>2nd, 3rd, 4th, 5th, 6th, 7th, 10th, 11th,
+                    12th, 14th &amp; 17th May 2021</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Release of Answer Key</td>
+                                <td style="width: 56.72268907563026%;" width="174">May 2021</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 39.49579831932773%;" width="169">Announcement of Results</td>
+                                <td style="width: 56.72268907563026%;" width="174">June 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="application" class="_mPS2id-t"><i class="fas fa-book-reader"></i>UGC NET 2021 Application Form</h2>
+                    <hr>
+                    <p>Students before applying for <a href="">UGC
+              NET 2021 Application Form</a> must go through the below given details:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Before applying for UGC NET, candidates must go through complete information bulletin and details of application process. Also, students must be ready with all the documents required at the time
+                            of registration.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Complete procedure of application can be carried out in online mode from <strong>2nd February
+                2021.</strong></li>
+                        <li><i class="fas fa-caret-right"></i>During application process, candidates must have to first register with unique email id and mobile number. This will generate application number and other required login details.</li>
+                        <li><i class="fas fa-caret-right"></i>Students will have to completely fill the online application form after registration.</li>
+                        <li><i class="fas fa-caret-right"></i>After filling the form, students are required to upload scanned images of photograph and signature as per the format (JPEG/JPG) and size.</li>
+                        <li><i class="fas fa-caret-right"></i>After uploading process, candidates must have to make fee payment through available payment mode.</li>
+                        <li><i class="fas fa-caret-right"></i>Students are able to edit the application before submission of form. After submission of form, candidates will be able to edit the application only during the correction period.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates are advised to print the application form and fee payment receipt for any reference in future.
+                        </li>
+                    </ul>
+                    <h3>Application Fee:</h3>
+                    <p><strong>Payment mode: </strong>UGC NET application fee can be paid through online mode by Debit or Credit Card/ Net-Banking/ Paytm.</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Category</strong></td>
+                                <td width="319"><strong>Application Fee (in Rs.)</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">UR/ General candidates</td>
+                                <td width="319">1000</td>
+                            </tr>
+                            <tr>
+                                <td width="319">General –EWS/ OBC – NCL candidates</td>
+                                <td width="319">500</td>
+                            </tr>
+                            <tr>
+                                <td width="319">ST/ SC/ PWD/ Transgender candidates</td>
+                                <td width="319">250</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Application Correction</h2>
+                    <hr>
+                    <p>The <a href="">UGC NET application
+              correction</a> window will be opened for the candidates who want to edit their application form. The correction window will open from <strong>5th to 9th March 2021.</strong> Students will be able to make correction only through online mode
+                        on the website.</p>
+                    <p>The complete details related to editable and non editable fields will be available on the website. Also, students will be informed about correction window through mail and SMS. No modification will be allowed after the last date of
+                        correction.
+                    </p>
+
+                    <h2 id="eligibility" class="_mPS2id-t"><i class="fas fa-book-reader"></i>UGC NET 2021 Eligibility Criteria</h2>
+                    <hr>
+                    <p>Students can check the <a href="#">UGC NET
+              Eligibility criteria</a> in the below given section:</p>
+                    <h3><strong>Qualification:</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Exam:</strong> Candidate (General/ UR/ General- EWS) with Masters Degree or its equivalent from UGC recognized University or Institution is eligible to apply.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Marks: </strong>Student in their Masters Degree level must have obtained at least 55% marks (50% marks for ST/SC/OBC (NCL)/PWD/ Transgender category candidates).</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Subjects: </strong>Candidates in the Master’s degree level should have passed with Electronic Science, Humanities and Social science (including languages), Computer science and
+                            applications, etc.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Appearing:</strong> Students who are in the last year of their Master’s degree level or who have appeared but results are awaited are also eligible to apply. Such students will be considered
+                            eligible only if they will fulfill the qualification requirements. Furthermore, the candidates must complete the Masters degree within 2 years of declaration of result otherwise he/she will be disqualified.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Ph.D Holders: </strong>Students with Ph.D degree whose Masters level exam has been completed by September 1992 will be given 5% relaxation in aggregate marks (which means from 55% to 50%).</li>
+                    </ul>
+                    <h3><strong>Age Criteria:</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Assistant Professor:</strong> For UGC NET, there will be no upper age limit to apply.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Junior Research Fellowship (JRF): </strong>Applying candidate should not be more than 31 years of age as on 1<sup>st</sup> March, 2021.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Age relaxation:</strong> ST/ SC/ PWD/ OBC- NCL/ Transgender/ women candidates will be given relaxation up to 5 years. Also 5 years relaxation will be given to candidates with research experience
+                            or who have served in armed forces. 3 years age relaxation will be given to candidates with LLM degree.</li>
+                    </ul>
+                    <h3><strong>Exemption (For Assistant Professor):</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Students passed the JRF/ UGC/ CSIR exam before the year 1989 are exempted to appear for NET.</li>
+                        <li><i class="fas fa-caret-right"></i>For recruitment and appointment of Assistant Professor in universities/ institutions, the minimum eligibility condition shall remain with NET/ SET/ SLET. So regarding it, exemption from NET/ SET/
+                            SLET will be governed by UGC regulations and amendments will be timely notified in the Gazette of India.</li>
+                        <li><i class="fas fa-caret-right"></i>Students who have qualified SET accredited by UGC for Assistant professor held before 1<sup>st</sup> December 2003 will be exempted to appear in NET and can apply for Assistant professor anywhere
+                            in India. SET which has been held onwards 1<sup>st</sup> December 2003, the candidates clearing SET will be eligible to apply for Assistant professor only in colleges and universities of the state from where they have cleared
+                            their SET.</li>
+                    </ul>
+                    <h2 id="pattern" class="_mPS2id-t"><i class="fas fa-book-reader"></i>UGC NET 2021 Exam Pattern</h2>
+                    <hr>
+                    <p>Students can know complete details of <a href="">UGC
+              NET exam pattern</a> in the below given section:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Exam Mode:</strong> The exam will be held in CBT mode.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Number of Papers:</strong> There will be two papers in the test.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Language Medium:</strong> The paper will be present in the language as chosen by the candidate either in Hindi or English.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Type of Questions:</strong> There will be multiple choice, objective type of questions in the paper.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Time Duration:</strong> The time duration of the exam will be 3 hours without any break.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Questions:</strong> There will be total of 150 questions in the paper. Paper 1 will have 50 questions and Paper 2 will contain 100 questions.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:</strong> The paper will be of total 300 marks. Paper 1 will be of 100 marks and Paper 2 will be of 200 marks.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marking Pattern:</strong> For each correct answer, 2 marks will be given.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Negative Marking:</strong> There will be no negative marking in the paper.</li>
+                    </ul>
+                    <p>Know distribution of questions and marks for UGC NET Paper in the below given table:</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="174"><strong>Paper</strong></td>
+                                <td width="144"><strong>Marks</strong></td>
+                                <td width="174"><strong>Number of Questions</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="174">Paper I</td>
+                                <td width="144">100</td>
+                                <td width="174">50</td>
+                            </tr>
+                            <tr>
+                                <td width="174">Paper II</td>
+                                <td width="144">200</td>
+                                <td width="174">100</td>
+                            </tr>
+                            <tr>
+                                <td width="174"><strong>Total</strong></td>
+                                <td width="144"><strong>300 marks</strong></td>
+                                <td width="174"><strong>150 questions</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="syllabus" class="_mPS2id-t"><i class="fas fa-book-reader"></i>UGC NET 2021 Syllabus</h2>
+                    <hr>
+                    <p>Students can check the complete <a href="">UGC NET
+              Syllabus</a> from the website. Students will be able to check the detailed syllabus online as per their choice of subjects. Paper 1 of UGC NET will be of general nature and prepared to assess the research aptitude /teaching of the candidate.</p>
+                    <p>Paper 2 will be prepared based on the core subjects or specialization as selected by the candidate. In paper 2 there are total 84 specialization subjects.</p>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Preparation Tips</h2>
+                    <hr>
+                    <p>Below we have provided <a href="">UGC NET
+              preparation tips</a> for the candidates to excel in the entrance test:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Check complete syllabus and pattern of UGC NET on the website.</li>
+                        <li><i class="fas fa-caret-right"></i>Students can solve previous year question paper or sample papers for practice.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates can prepare notes noting down all the important points at one place.</li>
+                        <li><i class="fas fa-caret-right"></i>A study routine should be made by the candidates and followed on a regular basis.</li>
+                        <li><i class="fas fa-caret-right"></i>The preparation for the UGC NET must be done using a study material which is highly recommended by the professionals.
+                        </li>
+                    </ul>
+
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Admit Card</h2>
+                    <hr>
+                    <p>The UGC NET Admit card will available for download from <strong>March/ April 2021</strong> for June session and in third&nbsp;week of November 2021 for December session. To download the admit card, students will be required to enter
+                        their login credentials. Students must follow complete instructions given on the admit card.
+                    </p>
+                    <p>Students must check complete details to be correct in the admit card. In case of any discrepancy in the admit card, the candidates are advised to immediately approach helpline to get the problem rectified. The authority will take the
+                        necessary actions to get problem rectified.</p>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Answer Key</h2>
+                    <hr>
+                    <p>The provisional answer key of UGC NET will be displayed in the <strong>month of June 2021</strong> (December session). Also students will be able to challenge the provisional answer key. The key will be displayed on the website for
+                        two or three days.</p>
+                    <p>For challenging of answer key, students have to make payment of Rs.1000 per question. After acceptance of challenge by the authority the final answer key will be published. The decision made by NTA based on challenges will be considered
+                        final and the result will be prepared based on final answer key.</p>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Result</h2>
+                    <hr>
+                    <p>UGC NET Result will be declared in the month of <strong>June 2021</strong> for December session exam. Students will be able to check their result by entering their login details. The result will be available only through online mode
+                        on the website. No candidate will be intimated about result individually.</p>
+                    <p>Students will be able to know their marks through the website which will be published by NTA after one week of announcement of result. No mark sheet will be issued by NTA authority for the candidates.</p>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Cut Off</h2>
+                    <hr>
+                    <p>To participate in the further admission procedure, students will be required to attain the cut off marks as per their category. A merit list will be prepared by the authority and published on the website. Category wise and subject
+                        wise merit list will be prepared separately for the qualified candidates.</p>
+                    <p>The cut off is mentioned in the below table:</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" width="169"><strong>Category</strong></td>
+                                <td colspan="2" width="233"><strong>Cut
+                    off</strong>&nbsp;<strong>Marks</strong>&nbsp;<strong>(%)</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="106"><strong>Paper – I</strong></td>
+                                <td width="127"><strong>Paper – II</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="169">General candidates</td>
+                                <td width="106">40%</td>
+                                <td width="127">40%</td>
+                            </tr>
+                            <tr>
+                                <td width="169">OBC (NCL)/ PWD/ SC/ ST candidates</td>
+                                <td width="106">35%</td>
+                                <td width="127">35%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2><i class="fas fa-book-reader"></i>UGC NET 2021 Selection Procedure</h2>
+                    <hr>
+                    <hr>
+                    <p>The Top 6% of the total students who will qualify the exam (both Paper 1 and 2) will be only considered qualified. Candidates will be given admission for the post of JRF or Assistant professor into various Indian institutes and universities
+                        based on cut off secured as per category.</p>
+                    <p>For the post of Assistant Professor, top 15% qualified candidates from each category will get selected and considered eligible.</p>
+                    <p><span style="color: #ff0000;">If you have any other query related to <strong>UGC NET 2021</strong>, you can
+              ask your query in Contact us section please !!!.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card-title">
+                <h2>Exam Schedule</h2>
+                <hr>
+                <div><a href="{% url 'jeemain' %}" style="color:cornflowerblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i
+              class="fas fa-caret-right"></i>JEEMAIN Details</a></div><br>
+                <div><a href="{% url 'gate' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>GATE Details</a></div><br>
+                <div><a href="{% url 'net' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>NET/JRF Details</a></div><br>
+                <div><a href="{% url 'cat' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>CAT Entrance Exam Details</a></div><br>
+                <div><a href="{% url 'schedule' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>DUET Details</a></div>
+            </div>
+        </div>
+    </div>
+    {% endblock netcontent %}
+
+
+    <!-------------------------------------------- Main Site Footer Section ------------------------------------------>
+    {% include 'books/footer.html' %}
+
+    <!-------------------------------------------- Main Site JSQuery Section ----------------------------------------->
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

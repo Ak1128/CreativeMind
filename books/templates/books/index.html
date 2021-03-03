@@ -1,0 +1,294 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Bookish</title>
+
+    <!-- Load Static Files -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fontawsome.min.css' %}">
+
+    <!-- Custom Style Sheet For Main -->
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- Custom Style Sheet For Main -->
+    <style>
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!------------------------------------------ Main Site Navigation  Section ---------------------------------------------------->
+
+    {% include 'books/navbar.html' %}
+
+
+    <!------------------------------------------- Main Site Header Section -------------------------------------------------------->
+    {% block content%}
+    <main>
+
+        <!-- Site Title -->
+        <section class="site-title">
+            <div class="site-background">
+                <h3> Study Material</h3>
+                <h1> Best Place To Search For Books</h1>
+                <a href="{% url 'dashboard' %}"></a><button class="btn">Explore for More</button>
+            </div>
+        </section>
+        <br>
+        <!--Books Carousal-->
+
+        <!-------------------------------------------- Main Site Content Section ----------------------------------------------------->
+
+        <!-- Site Main Content Of Posts-->
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static '/assets/blogpost/a.jpg' %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22, 2021</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Fill your house with stacks of books, in all the crannies and all the nooks.
+					</a>
+                            <p style="color: white;">A philosophical theory is a theory that explains or accounts for a general philosophy or specific branch of philosophy. While any sort of thesis or opinion may be termed a theory, in analytic philosophy it is thought best to
+                                reserve the word "theory" for systematic, comprehensive attempts to solve problems.
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static '/assets/blogpost/b.jpg' %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22, 2021</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">“When I have a little money, I buy books; and if I have any left, I buy food and clothes.”
+									</a>
+                            <p style="color: white;">A philosophical theory is a theory that explains or accounts for a general philosophy or specific branch of philosophy. While any sort of thesis or opinion may be termed a theory, in analytic philosophy it is thought best to
+                                reserve the word "theory" for systematic, comprehensive attempts to solve problems.
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static '/assets/blogpost/e.jpg' %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22, 2021</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">New data recording system to Books</a>
+                            <p style="color: white;">A philosophical theory is a theory that explains or accounts for a general philosophy or specific branch of philosophy. While any sort of thesis or opinion may be termed a theory, in analytic philosophy it is thought best to
+                                reserve the word "theory" for systematic, comprehensive attempts to solve problems.
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static '/assets/blogpost/f.jpg' %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22, 2021</span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">New data recording system to Books</a>
+                            <p style="color: white;">A philosophical theory is a theory that explains or accounts for a general philosophy or specific branch of philosophy. While any sort of thesis or opinion may be termed a theory, in analytic philosophy it is thought best to
+                                reserve the word "theory" for systematic, comprehensive attempts to solve problems.
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+                <aside class="sidebar">
+                    <div class="category">
+                        <h2 style="color: antiquewhite;">Category</h2>
+                        <hr>
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                                <a href="#">B.sc Material</a>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                                <a href="#">M.sc Material</a>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                                <a href="#">GATE</a>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                                <a href="#">NET / JRF</a>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                                <a href="#">JEEMAIN</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="popular-post">
+                        <h2 style="color: antiquewhite;">Popular Readings</h2>
+                        <hr>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="{% static '/assets/popular/img1.jpg' %}" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22,
+															2021</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">Notes and Material related to GATE</a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            <div class="post-image">
+                                <div>
+                                    <img src="{% static '/assets/popular/img2.jpg' %}" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22,
+															2021</span>
+
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">Notes and Material related to NET and JRF </a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+                            <div class="post-image">
+                                <div>
+                                    <img src="{% static '/assets/popular/img3.jpg' %}" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22,
+															2021</span>
+
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">Assessments for GATE / NET / JRF </a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+                            <div class="post-image">
+                                <div>
+                                    <img src="{% static '/assets/popular/img4.jpg' %}" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 22,
+															2021</span>
+
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">Question Paper and Solution for GATE / NET / JRF / JEEMAIN</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                        <h2 style="color: antiquewhite;">Newsletter</h2>
+                        <hr>
+                        <div class="form-element">
+                            <input type="text" class="input-element" placeholder="Email">
+                            <button class="btn form-btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="popular-tags">
+                        <h2 style="color: antiquewhite;">Popular Books</h2>
+                        <hr>
+                        <div class="tags flex-row">
+                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Physics</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="200">Mathematics</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="300">Biology</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="400">Chemistry</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="500">Science</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="600">English</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="800">Computer and Tech</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    {% endblock content %}
+
+    <!-------------------------------------------- Main Site Footer Section ------------------------------------------------------->
+    {% include 'books/footer.html' %}
+
+
+    <!-------------------------------------------- Main Site Js Links Section ---------------------------------------------------->
+
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+
+</html>

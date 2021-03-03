@@ -1,0 +1,549 @@
+<!DOCTYPE html> {% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Important Dates</title>
+
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- schedule Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Header/Blog Title */
+        
+        .row-du {
+            margin: auto 7rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Add a card effect for articles */
+        
+        .card-title {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        
+        h1 {
+            color: brown;
+        }
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* ----------------- Site Content --------------------- */
+        
+        .entry {
+            color: #090909;
+            font: 15px/25px Georgia, "Times New Roman", Times, serif;
+        }
+        
+        .entry p {
+            color: #282828;
+            font-family: Georgia, Sans-serif;
+            margin: 0 0 15px;
+        }
+        
+        .entry h2 {
+            color: #222;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            font-weight: 700 !important;
+            line-height: 33px;
+            margin: 0 0 6px;
+        }
+        
+        .mytable1 {
+            overflow-x: scroll;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        ul {
+            margin: -4px 0 18px 18px;
+        }
+        
+        li {
+            border-top: #282828 5px;
+        }
+        
+        .entry h3 {
+            font-size: 14px;
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section ---------------------------------------->
+
+    {% include 'books/navbar.html' %}
+
+    <!-------------------------------------------- Main Site Section --------------------------------------------------->
+
+    {% block examschedule %}
+    <div class="row-du">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+                    <h1>DU Admission 2021: Delhi University Application, Exam Dates, Eligibility</h1>
+                </div>
+                <div class="entry">
+                    <p>DU Admission 2021 will be organized to offer admission in various UG and PG courses. University offers admission in the field of engineering, management and law. Admission will be provided based on both merit and entrance examination.
+                        Entrance examination will be conducted by the National Testing Agency (NTA). In medical courses admission will be offered based on NEET and in management courses it will be done based on CAT scores. Candidates can read this complete
+                        article to know complete details about DU Admission 2021 including dates, application form, eligibility etc.</p>
+                    <h2><i class="fas fa-book-reader"></i>DU Admission 2021 Dates</h2>
+                    <hr>
+                    <p>Candidates can check tentative DU Admission dates from below:</p>
+                    <h3>For PG Courses (Entrance Based Courses):</h3>
+
+                    <!-- Table For PG Entrance Based -->
+                    <table class="mytable1" style="width: 100%; height: 230px;">
+                        <tbody>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319"><strong>Events </strong></td>
+                                <td style="height: 21px;" width="319"><strong>Dates (Tentative) </strong></td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px;" width="319">Starting of application form</td>
+                                <td style="height: 26px;" width="319">1<sup>st</sup> week of March 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319">Last date to submit applications</td>
+                                <td style="height: 21px;" width="319">Last week of March 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319">Availability of admit card</td>
+                                <td style="height: 21px;" width="319">Last week of April 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px;" width="319">Exam date</td>
+                                <td style="height: 26px;" width="319">1<sup>st</sup> and 2<sup>nd</sup>week of June 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319">Declaration of result</td>
+                                <td style="height: 21px;" width="319">Last week of June 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px;" width="319">Group discussion/ interview</td>
+                                <td style="height: 26px;" width="319">2<sup>nd</sup> week of July 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px;" width="319">1<sup>st</sup> allotment list release date</td>
+                                <td style="height: 26px;" width="319">3<sup>rd</sup> week of July 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319">Document verification</td>
+                                <td style="height: 21px;" width="319">Last week of July 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px;" width="319">Commencement of classes</td>
+                                <td style="height: 21px;" width="319">In month of August 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Table For UG Entrance Based -->
+                    <h3>For UG courses (Entrance Based Courses):</h3>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Events </strong></td>
+                                <td width="319"><strong>Dates (Tentative) </strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">Starting of application</td>
+                                <td width="319">1<sup>st</sup> week of March 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Last date to submit applications</td>
+                                <td width="319">Last week of March 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Availability of admit card</td>
+                                <td width="319">Last week of April 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Exam date</td>
+                                <td width="319">1<sup>st</sup> and 2<sup>nd</sup>week of June 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Declaration of result</td>
+                                <td width="319">Last week of June 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Starting of admission</td>
+                                <td width="319">3<sup>rd</sup> week of July 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Table For UG Merit Based -->
+                    <h3>For UG courses (Merit Based Courses):</h3>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Events </strong></td>
+                                <td width="319"><strong>Dates (Tentative) </strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">Registration starts from</td>
+                                <td width="319">3<sup>rd</sup> week of May 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Last date for registration</td>
+                                <td width="319">Last week of June 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">First merit list released on</td>
+                                <td width="319">Last week of June 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Document verification</td>
+                                <td width="319">Last week of June to 1<sup>st</sup> week of July 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Release of 2<sup>nd</sup> cut off</td>
+                                <td width="319">1<sup>st</sup> week of July 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Document verification</td>
+                                <td width="319">1<sup>st</sup> week of July 2021</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Starting of admission</td>
+                                <td width="319">Month of August 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Course Details -->
+                    <h3>Courses Offered:</h3>
+                    <p>Following mentioned UG and PG course are offered by the university:</p>
+                    <p><strong>UG Courses:</strong> B.Tech, BA, BA (Hons.), B.EL.ED, BMS, BBA, B.Sc., B.Com, LLB etc.</p>
+                    <p><strong>PG Courses:</strong> M.Com, M.Tech, LLM, MBA, M.Sc., MCA.</p>
+
+                    <!-- Application Form Details -->
+                    <h2><i class="fas fa-book-reader"></i>DU Application Form 2021</h2>
+                    <hr>
+                    <p>Candidates can check details about DU 2021 application form:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Application form for all courses will be released through
+                            <strong>online mode</strong>.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Candidates will be able to fill their application form from the
+                            <strong>first week of March
+                2021</strong>.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>For <strong>merit based UG&nbsp;</strong>courses application form will be released in <strong>the third
+                week of May 2021</strong>.</li>
+                        <li><i class="fas fa-caret-right"></i>Registration process will contain steps <strong>i.e. filling of
+                application form, document uploads,
+                payment of fee&nbsp;</strong>etc.</li>
+                        <li><i class="fas fa-caret-right"></i>Upload the scanned images of <strong>photograph
+              </strong>and&nbsp;<strong>signature&nbsp;</strong>in the JPG/ JPEG format.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates can fill their application form till the <strong>last week
+                of March 2021</strong>. For
+                            <strong>merit based UG&nbsp;</strong>courses form will be available <strong>till last week of June
+                2021</strong>.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Candidates will not need to send any hardcopy of the application form by post.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates must take <strong>printout </strong>of filled application form and keep it safe for other admission procedure.</li>
+                    </ul>
+
+
+                    <!-- Application Form  -->
+                    <h3>Application Fee:</h3>
+                    <p>Application fee will be paid through <strong>online mode&nbsp;</strong>only. Candidates can pay their online fee via <strong>credit card/ debit card or net banking</strong>. Fee will be
+                        <strong>non-refundable</strong>.
+                    </p>
+
+                    <p>Here we have provided fee structure for all category courses:</p>
+
+                    <p><strong>For Entrance Based UG/ PG Courses:</strong></p>
+
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Category </strong></td>
+                                <td width="319"><strong>Application Fee</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">General/ OBC category</td>
+                                <td width="319">Rs. 750</td>
+                            </tr>
+                            <tr>
+                                <td width="319">For SC/ ST category</td>
+                                <td width="319">Rs. 300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>For Merit Based UG Courses:</strong></p>
+
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Category </strong></td>
+                                <td width="319"><strong>Application Fee</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">For general/ OBC category</td>
+                                <td width="319">Rs. 250</td>
+                            </tr>
+                            <tr>
+                                <td width="319">For SC/ ST category</td>
+                                <td width="319">Rs. 100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Admission Eligibility  -->
+                    <h2><i class="fas fa-book-reader"></i>DU Admission Eligibility</h2>
+                    <hr>
+                    <p>Candidates must go through the DU 2021 eligibility criteria before filling the application form:</p>
+
+                    <h3><strong>UG Courses:</strong></h3>
+
+                    <h3>B.Tech (Information Technology and Mathematical Innovation):</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must have passed
+                            <strong>10<sup>th&nbsp;</sup></strong>and&nbsp;<strong>12<sup>th&nbsp;</sup></strong>examination or its equivalent with <strong>PCM </strong>and&nbsp;<strong>English subjects.</strong>
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:&nbsp;</strong>Candidates must secure minimum of
+                            <strong>60%&nbsp;</strong>in their qualifying examination.
+                        </li>
+                    </ul>
+                    <h3>B.EL.ED (Bachelors of Elementary Education):</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must pass
+                            <strong>10+2&nbsp;</strong>examination or its equivalent exam from any recognized board.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks Criteria:&nbsp;</strong>Candidates must have secures minimum of <strong>50%
+                marks&nbsp;</strong>in their 12th class.</li>
+                    </ul>
+                    <h3>B.Sc. in Physical Education, Health Education and Sports:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must pass
+                            <strong>intermediate
+                examination&nbsp;</strong>from any recognized board.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:&nbsp;</strong>Candidates must obtain <strong>45%
+                aggregate&nbsp;</strong>of marks in their 12th class.</li>
+                    </ul>
+                    <h3><strong>PG Courses:</strong></h3>
+                    <h3>M.Com Course:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must have passed
+                            <strong>B.A., BBA, B.Com </strong>or its equivalent from any recognized institute.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:&nbsp;</strong>Candidates must have secured minimum of
+                            <strong>50%
+                marks&nbsp;</strong>(45% for OBC, 40% for SC/ ST) in their qualifying examination.
+                        </li>
+                    </ul>
+                    <h3>LLM Course:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must have <strong>LLB
+                degree&nbsp;</strong>of 3 or 5 years from any recognized institute.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:&nbsp;</strong>Candidates must secure <strong>50%
+                marks&nbsp;</strong>(45% for OBC and 40% for SC/ ST) in their qualifying examination.</li>
+                    </ul>
+                    <h3>M.Tech Courses:</h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualification:&nbsp;</strong>Candidates must have passed
+                            <strong>B.Tech/ B.E. </strong>or its equivalent degree from any recognized board.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marks:&nbsp;</strong>Candidates must secure <strong>60%
+                marks&nbsp;</strong>in their qualifying degree.
+                        </li>
+                    </ul>
+
+                    <!-- Du 2021 Cut off -->
+                    <h2><i class="fas fa-book-reader"></i>DU Admission 2021 Cut Off</h2>
+                    <hr>
+                    <p>University will release DU Admission cut off for both <strong>merit based </strong>and <strong>entrance
+              based </strong>admission. Cut off will be released through <strong>online mode&nbsp;</strong>on the website. Candidates must have to obtain minimum cut of marks to be eligible for admission.</p>
+                    <p>Cut off will be prepared based on various factors including <strong>availability of seats, pervious year
+              cut off, entrance exam scores&nbsp;</strong>etc. University will release different cut off lists for UG and PG courses.</p>
+                    <p>Cut off will be released for candidates who will be eligible for admission. If candidates will not be selected in first cut off list they can try in second or third cut off list.</p>
+
+                    <!-- Reservation Criteria  -->
+                    <h2><i class="fas fa-book-reader"></i>Reservation Criteria</h2>
+                    <hr>
+                    <p>Candidates can check the percentage criteria for all categories which will be offered by the Delhi University:
+                    </p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td width="319"><strong>Category </strong></td>
+                                <td width="319"><strong>Percentage of Reserved Seats</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="319">Schedule caste (SC)</td>
+                                <td width="319">15</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Schedule tribe (ST)</td>
+                                <td width="319">7</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Other backward classes (OBC)</td>
+                                <td width="319">27</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Person with disability (PWD)</td>
+                                <td width="319">3</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Sports/ ECA quota</td>
+                                <td width="319">5</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Foreign candidates</td>
+                                <td width="319">5</td>
+                            </tr>
+                            <tr>
+                                <td width="319">Kashmiri migrants</td>
+                                <td width="319">5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Admission 2021 -->
+
+                    <h2><i class="fas fa-book-reader"></i>DU Admission 2021</h2>
+                    <hr>
+                    <p>After qualifying of entrance examination candidates will be selected for the counselling process. Candidates will have to register for counselling through <strong>online mode</strong>. Based on the cut off marks candidates will have
+                        to participate in the&nbsp;<strong>interview and group discussion
+            </strong>rounds.</p>
+                    <p>Candidates are advised to bring their <strong>original documents&nbsp;</strong>for verification process. It will be necessary to bring original documents or photocopies in the counselling process. Candidates will also need to submit
+                        counselling fee.</p>
+                    <p>After completing all the procedures seats will be allotted to the candidates. Seats will be allotted to the candidates based on factors i.e. <strong>interview/ group discussion, verification of
+              documents&nbsp;</strong>etc.</p>
+                    <p>Here we have mentioned the documents which will be needed for DU Admission 2021:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>10<sup>th </sup> and 12<sup>th </sup> mark sheets and certificates
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Migration certificate</li>
+                        <li><i class="fas fa-caret-right"></i>Graduation mark sheets</li>
+                        <li><i class="fas fa-caret-right"></i>Transfer certificate</li>
+                        <li><i class="fas fa-caret-right"></i>Category certificate</li>
+                        <li><i class="fas fa-caret-right"></i>Character certificate</li>
+                        <li><i class="fas fa-caret-right"></i>Valid ID proof</li>
+                        <li><i class="fas fa-caret-right"></i>Passport size photographs etc.</li>
+                    </ul>
+                    <p><span style="color: #ff0000;">If you have any other query about <strong>DU Admission 2021</strong> then you
+              can ask us by leaving your queries in Contact Form</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card-title">
+                <h2>Exam Schedule</h2>
+                <div><a href="{% url 'jeemain' %}" style="color:brown; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i class="fas fa-caret-right"></i>JEEMAIN Details</a></div><br>
+                <div><a href="{% url 'gate' %}" style="color:brown;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i class="fas fa-caret-right"></i>GATE Details</a></div><br>
+                <div><a href="{% url 'net' %}" style="color:brown;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i class="fas fa-caret-right"></i>NET/JRF Details</a></div><br>
+                <div><a href="{% url 'cat' %}" style="color:brown;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i class="fas fa-caret-right"></i>CAT Entrance Exam Details</a></div><br>
+                <div><a href="{% url 'schedule' %}" style="color:brown;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i class="fas fa-caret-right"></i>DUET Details</a></div>
+            </div>
+
+        </div>
+    </div>
+    {% endblock examschedule %}
+    <!-------------------------------------------- Main Site Footer Section -------------------------------------------->
+    {% include 'books/footer.html' %}
+
+    <!-------------------------------------------- Main Site JSQuery Section ------------------------------------------->
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+
+</html>

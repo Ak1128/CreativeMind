@@ -1,0 +1,885 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEMAIN Exam Schedule </title>
+
+    <!--- Main Css -->
+
+    <!-- Custom Style Sheet For Fontawsome -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/all.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+
+    <!-- schedule Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Header/Blog Title */
+        
+        .row-jeemain {
+            margin: auto 7rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        /* Right column */
+        
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+        /* Fake image */
+        
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+        /* Add a card effect for articles */
+        
+        .card-title {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row-jeemain:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Footer */
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 800px) {
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        /* ----------------- Site Content --------------------- */
+        
+        .ui-button-text {
+            border: #333;
+            color: #11609a;
+            font-size: 26px;
+            padding-right: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        .entry a {
+            color: #ff0000;
+        }
+        
+        .entry {
+            color: #090909;
+            font: 15px/25px Georgia, "Times New Roman", Times, serif;
+        }
+        
+        .entry p {
+            color: #282828;
+            font-family: Georgia, Sans-serif;
+            margin: 0 0 15px;
+        }
+        
+        .entry h2 {
+            color: #222;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            font-weight: 700 !important;
+            line-height: 33px;
+            margin: 0 0 6px;
+        }
+        
+        .mytable1 {
+            overflow-x: scroll;
+        }
+        
+        p {
+            padding-bottom: 1rem;
+        }
+        
+        ul {
+            margin: -4px 0 18px 18px;
+        }
+        
+        li {
+            border-top: #282828 5px;
+        }
+        
+        .entry h3 {
+            font-size: 14px;
+        }
+        
+        div.sgn-txt-ad {
+            background-color: #f5f8f9
+        }
+        
+        div.sgn-txt-ad h3 {
+            background-color: #c03611 !important;
+            padding: 0 10px !important;
+            color: #fff !important;
+            text-align: center
+        }
+        
+        div.sgn-txt-ad a {
+            color: #333
+        }
+        
+        div.sgn-txt-ad a:hover {
+            color: #036
+        }
+        
+        div.sgn-txt-ad {
+            font-family: arial
+        }
+        
+        div.sgn-txt-ad li {
+            padding: 5px 0 4px !important
+        }
+        
+        span.sgn-ad-right {
+            color: #11609a;
+            text-transform: uppercase;
+            font-weight: bold
+        }
+        
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            background-color: #000;
+            border: none;
+            border-radius: 0rem 3rem 3rem 0rem;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/kamalsinghverma865"><span class="fab fa-facebook-f" style="color:blue;"></span></a>
+        <a href="https://www.linkedin.com/in/kamal-singh-395a671a4/"><span class="fab fa-linkedin" style="color: skyblue;"></span></a>
+        <a href="https://www.instagram.com/ak_krishna_a/"><span class="fab fa-instagram" style="color:orangered"></span></a>
+        <a href="https://www.youtube.com/channel/UC9pFfbKgJv0vApNjDpjB1Mg" style="color:red;"><span class="fab fa-youtube"></span></a>
+    </div>
+    <!-------------------------------------------- Main Site Navigation Section --------------------------------------------------->
+    {% include 'books/navbar.html' %} {% block jeemaincontent %}
+    <div class="row-jeemain">
+        <div class="leftcolumn">
+            <div class="card-title">
+                <div class="headline">
+
+                    <h1>JEE Main 2021: Admit Card (Soon), Exam Dates, Syllabus, Preparation</h1>
+                </div>
+                <div class="entry">
+                    <p><strong>JEE Main 2021 Admit Card </strong>is releasing in<strong> second week
+              of February 2021</strong><strong>.&nbsp;Image Correction </strong>has been <strong>started.
+            </strong><strong>&nbsp;Syllabus </strong>has been<strong> released.</strong>&nbsp;Examination will be conducted
+                        <strong>four times</strong> in a year<strong>&nbsp;</strong>(February, March, April &amp; May). Joint Entrance Exam popularly known as JEE Main is conducted by National Testing Agency (<strong>NTA</strong>). Through this national
+                        level entrance exam, candidates are provided admission into UG engineering programmes in various IITs, NITs, CFTIs and other renowned institutions.
+                    </p>
+                    <p>For admission into <strong>B.E/B.Tech courses</strong>, candidates have to appear for JEE Main Paper–I. While for admission into <strong>B.Arch &amp; B.Plan courses</strong>, students are required to qualify JEE Main Paper–II &amp;
+                        III. Complete detailed information regarding JEE Main 2021, can be checked by the aspirants through this article.&nbsp;
+                        <strong><br> </strong></p>
+                    <p style="text-align: center;"></p>
+                    <p style="text-align: center;"><a id="uibtn9" target="_self" href="#admit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Admit Card</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn9',
+                                    'href': '#admit',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn10" target="_self" href="#dates" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam Dates</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn10',
+                                    'href': '#dates',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn11" target="_self" href="#pattern" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Exam Pattern</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn11',
+                                    'href': '#pattern',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <p style="text-align: center;">&nbsp; <a id="uibtn12" target="_self" href="#syllabus" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button"><span
+                class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>Syllabus</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn12',
+                                    'href': '#syllabus',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                        <a id="uibtn13" target="_self" href="#faqs" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary _mPS2id-h mPS2id-highlight mPS2id-highlight-first" role="button"><span class="ui-button-icon-primary ui-icon ui-icon-circle-triangle-s"></span><span
+                class="ui-button-text"><i class="fas fa-caret-down"></i>FAQs</span></a>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                init_ui_button_with_icon({
+                                    'sel': '#uibtn13',
+                                    'href': '#faqs',
+                                    'icon': 'ui-icon-circle-triangle-s'
+                                });
+                            });
+                        </script>
+                    </p>
+                    <h2 id="dates" class="_mPS2id-t"><i class="fas fa-book-reader"></i>JEE Main 2021 Important Dates</h2>
+                    <hr>
+                    <p>Get tentative <a href="#">exam dates</a> for JEE Main 2021 from below:</p>
+                    <table class="mytable1" style="width: 100%; height: 337px;">
+                        <tbody>
+                            <tr style="height: 21px;">
+                                <td style="height: 42px; width: 33.28100470957614%;" rowspan="2" width="213"><strong>Events</strong>
+                                </td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="426"><strong>&nbsp; Important Dates
+                    2021</strong>
+                                </td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 65.46310832025117%;" width="213"><strong>February Session Dates</strong>
+                                </td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 33.28100470957614%;" width="213">Release of Notification</td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="426">16th December 2020</td>
+                            </tr>
+                            <tr style="height: 43px;">
+                                <td style="height: 43px; width: 33.28100470957614%;" width="213">Starting of Registration process</td>
+                                <td style="height: 43px; width: 65.46310832025117%;" width="213">16th December 2020</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 33.28100470957614%;" width="213">Image correction starts</td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="213">January 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px; width: 33.28100470957614%;" width="213">End of registration</td>
+                                <td style="height: 26px; width: 65.46310832025117%;" width="213">23rd January 2021</td>
+                            </tr>
+                            <tr style="height: 43px;">
+                                <td style="height: 43px; width: 33.28100470957614%;" width="213">Last date of fee payment &amp; uploading of images
+                                </td>
+                                <td style="height: 43px; width: 65.46310832025117%;" width="213">24th January 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px; width: 33.28100470957614%;" width="213">Application Correction starts</td>
+                                <td style="height: 26px; width: 65.46310832025117%;" width="213">27th to 30th January 2021</td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px; width: 33.28100470957614%;" width="213">Release of Admit card</td>
+                                <td style="height: 26px; width: 65.46310832025117%;" width="213"><strong>2nd week of February
+                    2021&nbsp;</strong></td>
+                            </tr>
+                            <tr style="height: 26px;">
+                                <td style="height: 26px; width: 33.28100470957614%;" width="213">JEE Main Exam</td>
+                                <td style="height: 26px; width: 65.46310832025117%;" width="213"><span style="color: #ff0000;"><strong>1st
+                      Session- 23rd – 26th February 2021</strong></span>
+                                    <p></p>
+                                    <p><span style="color: #ff0000;"><strong>2nd Session- 15th – 18th March 2021&nbsp;</strong></span></p>
+                                    <p><span style="color: #ff0000;"><strong>3rd Session- 27th – 30th April 2021&nbsp;</strong></span></p>
+                                    <p><span style="color: #ff0000;"><strong>4th Session- 24th – 28th May 2021&nbsp;</strong></span></p>
+                                </td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 33.28100470957614%;" width="213">Display of Answer key</td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="213">February 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 33.28100470957614%;" width="213">Declaration of Result</td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="213">1st week of March 2021</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="height: 21px; width: 33.28100470957614%;" width="213">Counselling process starts</td>
+                                <td style="height: 21px; width: 65.46310832025117%;" width="426">June/ July 2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="admit" class="_mPS2id-t"><i class="fas fa-book-reader"></i>JEE Main 2021 Admit Card</h2>
+                    <hr>
+                    <p>The <a href="#">admit card</a> of JEE Main 2021 will be made available in <strong>second week of February 2021</strong>&nbsp;(February session). Students will be able to download the hall ticket by entering their login details. Also
+                        an intimation of admit card will be sent to the candidates on their registered mail id/ phone number.</p>
+                    <p>Students must note that no slot booking will take place to allot exam centers, exam time, date and exam shift. NTA will randomly allot these to the candidates. These details will be visible to the students when admit card will be downloaded.</p>
+                    <p>For the April session admit card, students will be able to download it online from the website in the third week of March 2021. Candidates must go through complete details mentioned in the admit card. In case of correction in any detail
+                        in the admit card, contact the officials immediately before the exam date.</p>
+                    <p><strong>Also Check:</strong></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main Login
+              Errors</a></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main Slot
+              Booking</a></p>
+                    <h2 id="correction"><i class="fas fa-book-reader"></i>JEE Main 2021 Correction</h2>
+                    <hr>
+                    <p>The image correction facility has been started after the application process ends. Students are able to make correction in the images uploaded wrongly while applying for JEE Main. The image correction has been started from
+                        <strong>27th</strong>&nbsp;<strong>January 2020</strong> (February session).
+                    </p>
+                    <p>Besides, correction in images, students are able to make correction in various details entered in the application form. One time facility has been provided to the candidates to make correction in the details entered in the application.
+                        Students may have to pay additional fee to make <a href="#">JEE Main application
+              correction</a>. The correction in the details has been started from<strong>&nbsp;27th to 30th January
+              2021</strong>&nbsp;(February session).
+                    </p>
+                    <h2 id="pattern" class="_mPS2id-t"><i class="fas fa-book-reader"></i>JEE Main 2021 Exam Pattern</h2>
+                    <hr>
+                    <p>Students must go through below given <a href="#">JEE Main
+              Exam pattern</a> to know various details about the entrance test:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Mode of Exam:</strong> JEE Main will be held through
+                            <strong>online</strong> CBT mode. The drawing test of JEE Main Paper II (B.Arch) will be held in <strong>Pen and paper</strong> mode.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Time Duration:</strong> 3 hours will be provided to complete the paper. In case of PWD candidate with 40% disability, 1 hour will be provided extra for completing the paper.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Language Medium:</strong> Students will be able to attempt the paper in <strong>Assamese,
+                Bengali,
+                Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu, Urdu in addition to Hindi, English and
+                Gujarati</strong>.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Papers:</strong> For B.E/ B.Tech course, JEE Main Paper – I will be conducted. While for B.Arch &amp; B.Plan admission, JEE Main Paper – 2 and JEE Main paper – 3 will be held.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Questions Type:</strong> The questions present in the paper will be of objective type. Also, as per the latest changes in the pattern of JEE Main, there will be questions in which answers
+                            are to be made in numerical values. While the drawing test in JEE Main Paper 2 will be of subjective type.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Number of Questions:</strong> The total number of questions in JEE Main Paper -1 (B.E/ B.Tech) –
+                            <strong>90</strong> questions; JEE Main Paper -2 (B.Arch) – <strong>82</strong> questions; JEE Main Paper -3 (B.Plan) – <strong>105</strong> questions.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Total Marks:</strong> JEE Main Paper – 1 (B.E/ B.Tech) will be of total 300 marks. While, JEE Main Paper -2 &amp; 3 for B.Arch/ B.Plan will be of total 400 marks.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Marking Pattern:</strong> For every correct answer, 4 marks will be given. For every incorrect response, 1 mark will get deducted.</li>
+                    </ul>
+                    <p>Know the questions distribution pattern of JEE Main Paper – I, II and III in the below given table:</p>
+                    <h3>JEE Main Paper – I (B.E/ B.Tech)</h3>
+                    <table class="mytable1" style="width: 51.215116064508976%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 24.337349397590362%;"><strong>Subject</strong></td>
+                                <td style="width: 42.478100320746066%;" colspan="2"><strong>Number of Questions</strong><strong><br>
+                  </strong>
+                                </td>
+                                <td style="width: 30.292984016603327%;" rowspan="2"><strong>Marks Distribution</strong><strong><br>
+                  </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 24.337349397590362%;"><strong>&nbsp;</strong></td>
+                                <td style="width: 24.81927710843373%;"><strong>Section A</strong></td>
+                                <td style="width: 17.658823212312335%;"><strong>Section B</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 24.337349397590362%;">Physics</td>
+                                <td style="width: 24.81927710843373%;">30</td>
+                                <td style="width: 17.658823212312335%;">10</td>
+                                <td style="width: 30.292984016603327%;">100</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 24.337349397590362%;">Mathematics</td>
+                                <td style="width: 24.81927710843373%;">30</td>
+                                <td style="width: 17.658823212312335%;">10</td>
+                                <td style="width: 30.292984016603327%;">100</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 24.337349397590362%;">Chemistry</td>
+                                <td style="width: 24.81927710843373%;">30</td>
+                                <td style="width: 17.658823212312335%;">10</td>
+                                <td style="width: 30.292984016603327%;">100</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 24.337349397590362%;"><strong>Total</strong></td>
+                                <td style="width: 24.81927710843373%;" colspan="2"><strong>90</strong></td>
+                                <td style="width: 30.292984016603327%;"><strong>300</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>JEE Main Paper – II (B.Arch)</h3>
+                    <table class="mytable1" style="width: 56.874843161856965%; height: 132px;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>Subject</strong></td>
+                                <td style="width: 42.478100320746066%; height: 22px;" colspan="2"><strong>Number of
+                    Questions</strong><strong><br> </strong></td>
+                                <td style="width: 30.292984016603327%; height: 44px;" rowspan="2"><strong>Marks
+                    Distribution</strong><strong><br> </strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>&nbsp;</strong></td>
+                                <td style="width: 24.81927710843373%; height: 22px;"><strong>Section A</strong></td>
+                                <td style="width: 17.658823212312335%; height: 22px;"><strong>Section B</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Aptitude Test</td>
+                                <td style="width: 24.81927710843373%; height: 22px;">50</td>
+                                <td style="width: 17.658823212312335%; height: 22px;">–</td>
+                                <td style="width: 30.292984016603327%; height: 22px;">200</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Mathematics</td>
+                                <td style="width: 24.81927710843373%; height: 22px;">20</td>
+                                <td style="width: 17.658823212312335%; height: 22px;">10</td>
+                                <td style="width: 30.292984016603327%; height: 22px;">100</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Drawing Test</td>
+                                <td style="width: 24.81927710843373%; height: 22px;">2</td>
+                                <td style="width: 17.658823212312335%; height: 22px;">–</td>
+                                <td style="width: 30.292984016603327%; height: 22px;">100</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>Total</strong></td>
+                                <td style="width: 24.81927710843373%; height: 22px;" colspan="2"><strong>82</strong></td>
+                                <td style="width: 30.292984016603327%; height: 22px;"><strong>400</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>JEE Main Paper – III (B.Plan)</p>
+                    <table class="mytable1" style="width: 59.17431192660551%;">
+                        <tbody>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>Subject</strong></td>
+                                <td style="width: 22.82536175496402%; height: 22px;" colspan="2"><strong>Number of
+                    Questions</strong><strong><br> </strong></td>
+                                <td style="width: 1.8552875695732842%; height: 44px;" rowspan="2"><strong>Marks
+                    Distribution</strong><strong><br> </strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>&nbsp;</strong></td>
+                                <td style="width: 10.082042293559162%; height: 22px;"><strong>Section A</strong></td>
+                                <td style="width: 12.743319461404859%; height: 22px;"><strong>Section B</strong></td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Mathematics</td>
+                                <td style="width: 10.082042293559162%; height: 22px;">20</td>
+                                <td style="width: 12.743319461404859%; height: 22px;">10</td>
+                                <td style="width: 1.8552875695732842%; height: 22px;">100</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Aptitude Test</td>
+                                <td style="width: 10.082042293559162%; height: 22px;">50</td>
+                                <td style="width: 12.743319461404859%; height: 22px;">–</td>
+                                <td style="width: 1.8552875695732842%; height: 22px;">200</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;">Planning Based Questions -Part II</td>
+                                <td style="width: 10.082042293559162%; height: 22px;">25</td>
+                                <td style="width: 12.743319461404859%; height: 22px;">–</td>
+                                <td style="width: 1.8552875695732842%; height: 22px;">100</td>
+                            </tr>
+                            <tr style="height: 22px;">
+                                <td style="width: 24.337349397590362%; height: 22px;"><strong>Total</strong></td>
+                                <td style="width: 22.82536175496402%; height: 22px;" colspan="2"><strong>105</strong></td>
+                                <td style="width: 1.8552875695732842%; height: 22px;"><strong>400</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Note: 1. In Section B, candidates will have to attempt any 5 questions out of 10. There will be no negative marking for section B questions.</p>
+                    <p>2. The officials has decided to provide choices in one section to cater to the decision of different Boards across the country regarding the reduction of syllabus. However, the total number of questions to be attempted will remain
+                        the same (Physics – 25, Chemistry – 25 and Mathematics – 25), wherever applicable.</p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Syllabus</h2>
+                    <hr>
+                    <p><a href="#">JEE Main Syllabus</a> can be checked by the students online from the website. The syllabus is basically prescribed from 11<sup>th</sup> &amp; 12
+                        <sup>th</sup> level topics of CBSE pattern. The JEE Main paper –I (B.E/B.Tech) will have questions from various topics from Physics, Chemistry and Mathematics subjects. For JEE Main Paper – II (B.Arch) Syllabus the questions will
+                        be from various topics from Aptitude, Mathematics and Drawing sections.</p>
+                    <p>There is no changes done by the officials in syllabus, However, there will be some changes in exam pattern.
+                    </p>
+                    <p>For JEE Main Paper – III (B.Plan) Syllabus, the questions will be from various topics from Aptitude, Mathematics and Planning based questions.</p>
+                    <p>Students will also be able to prepare from NCERT syllabus.</p>
+                    <p>Know various important topics contained in the syllabus of JEE Main in the below given section:</p>
+                    <h3><strong>JEE Mains Paper- I (B.E/ B.Tech) Syllabus:</strong></h3>
+                    <p><strong>Physics:</strong></p>
+                    <p>Physics and measurement, Laws of motion, Rotational motion, Thermodynamics, Electronic devices, Oscillations and waves, Electromagnetic induction and alternating currents, Current electricity, Optics, Work, energy and power, Electrostatics,
+                        Kinetic theory of gases, Kinematics, Gravitation, Properties of solids and liquids, etc.</p>
+                    <p><strong>Mathematics:</strong></p>
+                    <p>Sets, Relations and functions, Integral calculus, Matrices and determinants, Complex numbers and quadratic equations, Mathematical induction, Sequences and series, Binomial theorem and its simple applications, Statistics and probability,
+                        Trigonometry, Vector algebra, Permutations and combinations, Mathematical reasoning, etc.
+                    </p>
+                    <p><strong>Chemistry:</strong></p>
+                    <p><strong>Physical Chemistry:</strong> Some basic concepts in chemistry, Equilibrium, Atomic structure, Chemical thermodynamics, Chemical kinetics, Chemical bonding and molecular structure, States of matter, etc.</p>
+                    <p><strong>Organic Chemistry:</strong> Purification and characterization of organic compounds, Chemistry in everyday life, Organic compounds containing halogens, Organic compounds containing nitrogen, Some basic principles of organic
+                        chemistry, etc.</p>
+                    <p><strong>Inorganic Chemistry:</strong> Classification of elements and periodicity in properties, Hydrogen, D – and f – block elements, Environmental chemistry, Block elements (alkali and alkaline earth metals), Block elements group
+                        13 to group 18 elements, etc.</p>
+                    <h3><strong>JEE Mains Paper II &amp; III (B.Arch/ B.Plan) Syllabus:</strong></h3>
+                    <p><strong>Part I</strong>: Awareness of persons, places, Buildings, Visualizing three dimensional objects from two dimensional drawings, Materials, Analytical Reasoning Mental Ability (Visual, Numerical and Verbal), Visualizing, etc.
+                    </p>
+                    <p><strong>Part II:</strong> Understanding and appreciation of scale and proportion of objects, Transformation of forms both 2 D and 3 D union, building forms and elements, color texture, harmony and contrast, subtraction, Creating two
+                        dimensional and three dimensional compositions using given shapes and forms, rotation, etc.</p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Preparation Tips</h2>
+                    <hr>
+                    <p>To qualify in the JEE Main exam, we have provided some useful <a href="#">preparation tips</a> which the appearing candidates can follow to excel in exam:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Before the preparation is to be started, it is very essential for the candidates to know the syllabus and exam pattern.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>It is very important for the candidates to be aware of the question trends followed in the exam, so students can go through the past papers to know the details.</li>
+                        <li><i class="fas fa-caret-right"></i>To make the preparation strong, students are advised to attempt the mock tests.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates must prepare from a good source of study material which is commonly recommended for the exam.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Students should also be aware of the exam pattern and marking pattern followed in the exam.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates must prepare notes and go through these notes regularly.
+                        </li>
+                    </ul>
+                    <p><strong>Also Check:</strong></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main Video
+              Lectures</a></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main Mock
+              Test</a></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main Exam
+              Centres</a></p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Answer Key</h2>
+                    <hr>
+                    <p>NTA will publish the <a href="#">JEE Main Answer key</a> (provisional) along with <a href="#">question papers</a> after the completion of entrance exam. The answer key will be published through PDF format online. The provisional answer
+                        key will get released in the <strong>last week of February 2021</strong>.</p>
+                    <p>After the release of answer key, candidates will also be able to make challenges against it in case of any error. Students will be required to pay certain amount of fee and submit proof for making challenges.</p>
+                    <p>After the challenge will be considered correct by the authority, the final answer key will be published.
+                    </p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Result</h2>
+                    <hr>
+                    <p><a href="#">JEE Main Result</a> will be declared online on the website in the <strong>last week of February 2021</strong> (February session). Students will be able to know the results through entering their date of birth &amp; roll
+                        number. The April session result will be announced in the
+                        <strong>last week of April 2021.</strong>
+                    </p>
+                    <p>The scores will be calculated corresponding to the raw marks obtained by the student in the entrance test.
+                    </p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Scorecard</h2>
+                    <hr>
+                    <p>The Scorecard of JEE Main 2021 will be made available online for download after the results declaration. The scorecard is a necessary document which will display the performance of the candidate in the JEE Main exam.
+                    </p>
+                    <p>Also other details like the candidate’s name, roll number, category, parent’s name, state code of eligibility, All India Rank, marks obtained, category wise rank, qualifying status etc.</p>
+                    <p>No other mode will be entertained to get the scorecard. Students have to get it through online mode.</p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Mains 2021 Rank List</h2>
+                    <hr>
+                    <p>After the JEE Main results will be declared by NTA, rank list will be published online. The rank list published online will mention the candidate’s – All India Rank and Category rank. Students will be allotted ranks based on the marks
+                        secured by the students in the JEE Mains entrance exam.</p>
+                    <p>Separate rank list may be prepared by the states to admit candidates in the engineering institutions affiliated to State universities.</p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Cut Off</h2>
+                    <hr>
+                    <p>To be eligible for admission into IITs, NITs, CFTIs and various other known institutions it is very important for the candidates to secure <a href="#">cut off</a> marks. Also, students will have to obtain cut off as per their category
+                        to participate in the All India centralized counselling process.
+                    </p>
+                    <p>Students can know below the cut off for various categories as per the previous year cut off trends:</p>
+                    <table class="mytable1" style="width: 64.84170801434587%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>Category</strong></td>
+                                <td style="width: 10.076775431861803%;"><strong>Cut Off 2020</strong></td>
+                                <td style="width: 10.076775431861803%;"><strong>Cut Off 2019</strong></td>
+                                <td style="width: 18.618042226487525%;"><strong>Cut Off 2018</strong></td>
+                                <td style="width: 18.426103646833013%;"><strong>Cut Off 2017</strong></td>
+                                <td style="width: 18.618042226487525%;"><strong>Cut Off 2016</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>General</strong></td>
+                                <td style="width: 10.076775431861803%;">90.3765335</td>
+                                <td style="width: 10.076775431861803%;">89.7548849</td>
+                                <td style="width: 18.618042226487525%;">74</td>
+                                <td style="width: 18.426103646833013%;">81</td>
+                                <td style="width: 18.618042226487525%;">100</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>General EWS</strong></td>
+                                <td style="width: 10.076775431861803%;">
+                                    <div class="page" title="Page 2">
+                                        <div class="section">
+                                            <div class="layoutArea">
+                                                <div class="column">
+                                                    <p>70.2435518</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 10.076775431861803%;">78.2174869</td>
+                                <td style="width: 18.618042226487525%;">–</td>
+                                <td style="width: 18.426103646833013%;">–</td>
+                                <td style="width: 18.618042226487525%;">–</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>OBC</strong></td>
+                                <td style="width: 10.076775431861803%;">72.8887969</td>
+                                <td style="width: 10.076775431861803%;">74.3166557</td>
+                                <td style="width: 18.618042226487525%;">45</td>
+                                <td style="width: 18.426103646833013%;">49</td>
+                                <td style="width: 18.618042226487525%;">70</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>ST</strong></td>
+                                <td style="width: 10.076775431861803%;">
+                                    <div class="page" title="Page 2">
+                                        <div class="section">
+                                            <div class="layoutArea">
+                                                <div class="column">
+                                                    <p>39.0696101</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 10.076775431861803%;">44.3345172</td>
+                                <td style="width: 18.618042226487525%;">24</td>
+                                <td style="width: 18.426103646833013%;">27</td>
+                                <td style="width: 18.618042226487525%;">48</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>SC</strong></td>
+                                <td style="width: 10.076775431861803%;">
+                                    <div class="page" title="Page 2">
+                                        <div class="section">
+                                            <div class="layoutArea">
+                                                <div class="column">
+                                                    <p>50.1760245</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width: 10.076775431861803%;">54.0128155</td>
+                                <td style="width: 18.618042226487525%;">29</td>
+                                <td style="width: 18.426103646833013%;">32</td>
+                                <td style="width: 18.618042226487525%;">52</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.769673704414586%;"><strong>PWD</strong></td>
+                                <td style="width: 10.076775431861803%;">0.0618524</td>
+                                <td style="width: 10.076775431861803%;">0.11371730</td>
+                                <td style="width: 18.618042226487525%;">-35</td>
+                                <td style="width: 18.426103646833013%;">–</td>
+                                <td style="width: 18.618042226487525%;">–</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Also Check:</strong></p>
+                    <p><a href="#" target="_blank" rel="noopener">JEE Main
+              College Predictor</a></p>
+                    <h2><i class="fas fa-book-reader"></i>JEE Main 2021 Counselling</h2>
+                    <hr>
+                    <p><a href="#">JEE Main Counselling</a> will be organized by JoSAA from <strong>second week of June 2021.</strong> For the counselling process through CSAB it will get started from <strong>fourth week of July 2021.</strong> Students will
+                        have to register, make counselling fee payment &amp; choice filling.</p>
+                    <p>Only the students who will secure the cut off marks and get shortlisted in rank list will be only eligible for counselling session. Online centralized process will be organized for counselling. Seat allotment status will be displayed
+                        online and can be checked by the students through their login.</p>
+                    <p>While reporting at the institution, students will also have to submit their essential documents such as –
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>JEE Main Score card</li>
+                        <li><i class="fas fa-caret-right"></i>Provisional seat allotment letter</li>
+                        <li><i class="fas fa-caret-right"></i>Date of birth proof (10th class mark sheet)</li>
+                        <li><i class="fas fa-caret-right"></i>Three passport size photographs (same as uploaded in the JEE Main application)
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Registration-cum-locked choices for seat allotment</li>
+                        <li><i class="fas fa-caret-right"></i>Proof of seat acceptance fee payment</li>
+                        <li><i class="fas fa-caret-right"></i>12th class performance check</li>
+                        <li><i class="fas fa-caret-right"></i>Undertaking by the candidate</li>
+                        <li><i class="fas fa-caret-right"></i>Medical certificate</li>
+                        <li><i class="fas fa-caret-right"></i>Photo ID card (issued by govt./last attended school/12th class admit card)
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>JEE Main admit card</li>
+                        <li><i class="fas fa-caret-right"></i>12th class mark sheet &amp; passing certificate (if available)</li>
+                        <li><i class="fas fa-caret-right"></i>Category certificate (if applicable)</li>
+                        <li><i class="fas fa-caret-right"></i>OCI certificate or PIO card</li>
+                        <li><i class="fas fa-caret-right"></i>PwD certificate (if applicable)</li>
+                    </ul>
+                    <h2 id="application"><i class="fas fa-book-reader"></i>JEE Main 2021 Application Form</h2>
+                    <hr>
+                    <p>Students can get information related to JEE Main 2021 in the below provided section:</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><a href="#">JEE Main 2021 Application</a> process has been started from <strong>16th December 2020</strong> (February session) through online mode
+                            <strong><em>(link is provided above)</em></strong>.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Students are able to register themselves for JEE Main through NTA website.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Students are advised to register through valid mail id and phone number. Complete details will be sent to it by the authority.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates can apply for one or more than one session together and pay application fee accordingly.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates can fill language of question paper at the time of filling application form, it will not be changed at later stage.</li>
+                        <li><i class="fas fa-caret-right"></i>Complete application process contains various steps like Registration, Filling up of Application form, Image uploading, Application Fee payment and Printing of Application form.</li>
+                        <li><i class="fas fa-caret-right"></i>Students can get an SMS/ mail on their registered mobile number or mail id regarding successful submission of form after completing the application process.</li>
+                        <li><i class="fas fa-caret-right"></i>Candidates can fill application form till <strong>23rd
+                January</strong>&nbsp;<strong>2021</strong> for
+                            <strong>February</strong> session exam.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>Application correction window has been re-opened briefly immediately after declaration of result.</li>
+                        <li><i class="fas fa-caret-right"></i>After completion of application process, students are advised to print the application form and fee payment proof for any further use in future.</li>
+                    </ul>
+                    <h3>Application Fee:</h3>
+                    <p><strong>Payment mode:</strong> JEE Main Application Fee payment can be paid&nbsp;through online mode. Students are able to pay the fee through net banking/debit or credit card, PAYTM or UPI mode. No offline mode is allowed to pay the
+                        application fee.</p>
+                    <p>In case candidates does not want to appear in the session for which application fee has been paid, then it will be refunded by the officials.</p>
+                    <p>Know category wise application fee for JEE Main as per the past trends below:</p>
+                    <table class="mytable1">
+                        <tbody>
+                            <tr>
+                                <td style="width: 35.098%;" rowspan="2" width="175"><strong>Papers</strong></td>
+                                <td style="width: 23.5294%;" rowspan="2" width="116"><strong>Category</strong></td>
+                                <td style="width: 45.098%;" colspan="2"><strong>Application Fee</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20.829%;"><strong>Exam Center in India</strong></td>
+                                <td style="width: 24.269%;"><strong>Exam Center Outside India</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 35.098%;" rowspan="2" width="175">B.E./B.Tech<br> or<br> B.Arch<br> or<br> B.Planning
+                                </td>
+                                <td style="width: 23.5294%;" width="116">Gen/Gen-EWS/ OBC-NCL candidates</td>
+                                <td style="width: 20.829%;">Boys – Rs.650<br> Girls – Rs.325</td>
+                                <td style="width: 24.269%;">Boys – Rs.3000<br> Girls – Rs.1500</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 23.5294%;" width="116">SC/ ST/ PwD/ Transgender candidates</td>
+                                <td style="width: 20.829%;">Boys – Rs.325<br> Girls – Rs.325</td>
+                                <td style="width: 24.269%;">Boys – Rs.1500<br> Girls – Rs.1500</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 35.098%;" rowspan="2" width="175">B.E./B.Tech &amp; B. Arch<br> or<br> B.E./B.Tech &amp; B. Planning
+                                    <br> or<br> B.E./B.Tech, B. Arch &amp;<br> B.Planning<br> or<br> B.Arch &amp; B.Planning</td>
+                                <td style="width: 23.5294%;" width="116">Gen/Gen-EWS/ OBC-NCL candidates</td>
+                                <td style="width: 20.829%;">Boys – Rs.1300<br> Girls – Rs.650</td>
+                                <td style="width: 24.269%;">Boys – Rs.6000<br> Girls – Rs.3000</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 23.5294%;" width="116">SC/ ST/ PwD/ Transgender candidates</td>
+                                <td style="width: 20.829%;">Boys – Rs.650<br> Girls – Rs.650</td>
+                                <td style="width: 24.269%;">Boys – Rs.3000<br> Girls – Rs.3000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="blue_box" style="width:630px;">
+                        <div class="blue_box_content"> <strong><a href="#" rel="noopener noreferrer">Check Here</a> <span
+                  style="color: #ff0000;">– How to Fill JEE Main 2021
+                  Application Form</span></strong></div>
+                    </div>
+                    <h2 id="eligibility"><i class="fas fa-book-reader"></i>JEE Main 2021 Eligibility Criteria</h2>
+                    <hr>
+                    <p>The <a href="#">JEE Main Eligibility criterion</a> is provided in the below given section. Students must go through the complete eligibility before applying for the form:
+                    </p>
+                    <h3><strong>General Eligibility:</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Nationality:</strong> Indian nationals as well as international applicants are eligible to apply.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>International Applicants:</strong> Applicants from foreign countries are required to obtain the necessary marks /percentage from board recognized by AIU to be eligible for JEE Main.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Age Criterion:</strong> There is no age limit prescribed to apply for JEE Main 2021.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Attempt Limit:</strong> There will be no attempt limit.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>JEE Advanced:</strong> JAB has decided to give one more chance to students who could not take JEE Advanced 2020 due to Covid-19. Such students will not have to re-qualify by writing JEE
+                            Main 2021 and will be allowed to directly appear in the JEE Advanced 2021 exam.</li>
+                    </ul>
+                    <h3><strong>Qualification:</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Exam</strong>: Applying candidate must have passed 12th level or its equivalent in 2019, 2020 from a recognized board or university.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Appearing</strong>: Students who are appearing for their 12
+                            <sup>th</sup> level in the 2021 session are also eligible to apply. Students who have passed their 12<sup>th</sup> level in 2018 or before and those appearing in 2022 exam or later are not eligible for JEE Main 2021.</li>
+                        <li><i class="fas fa-caret-right"></i><strong>Qualifying Subjects:</strong>
+                            <ul>
+                                <li><i class="fas fa-caret-right"></i><strong>For B.E/B.Tech</strong>, applicants in 12th level should have passed with at least of five subjects – Physics &amp; Mathematics subjects as compulsory along with Biology, Chemistry,
+                                    Biotechnology or any other technical vocational as optional subjects.</li>
+                                <li><i class="fas fa-caret-right"></i><strong>For B.Arch, </strong>students must pass intermediate level with Physics, Mathematics &amp; Chemistry as compulsory subjects.</li>
+                                <li><i class="fas fa-caret-right"></i><strong>For B.Plan, </strong>candidate should have passed 12th level with Mathematics as compulsory subject.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-caret-right"></i><strong>Diploma:</strong> Those students who are holding diploma are also eligible to apply. Such candidates are eligible for admissions in IIT’s only.</li>
+                    </ul>
+                    <h3><strong>State Of Eligibility:</strong></h3>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i>Students will be required to fill the state code of eligibility at the time of registration process. The students will have to choose the state code of eligibility from which they have qualified
+                            their 12
+                            <sup>th</sup> level exam.</li>
+                        <li><i class="fas fa-caret-right"></i>The state code of eligibility will not depend upon the native or residence place of the appearing candidate.
+                        </li>
+                        <li><i class="fas fa-caret-right"></i>For the Indian nationals passing the 12<sup>th</sup> level from an institution located abroad, the state code of eligibility will be determined based on permanent address of India provided on the
+                            passport.
+                        </li>
+                    </ul>
+                    <p><span style="color: #ff0000;">If you have any other query regarding <strong>JEE Main 2021</strong>, you can
+              ask
+              your query in the contact us section.</span></p>
+                    <div style="clear:both;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card-title">
+                <h2>Exam Schedule</h2>
+                <hr>
+                <div><a href="{% url 'jeemain' %}" style="color:cornflowerblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i
+              class="fas fa-caret-right"></i>JEEMAIN Details</a></div><br>
+                <div><a href="{% url 'gate' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>GATE Details</a></div><br>
+                <div><a href="{% url 'net' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>NET/JRF Details</a></div><br>
+                <div><a href="{% url 'cat' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>CAT Entrance Exam Details</a></div><br>
+                <div><a href="{% url 'schedule' %}" style="color:cornflowerblue;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><i
+              class="fas fa-caret-right"></i>DUET Details</a></div>
+            </div>
+        </div>
+    </div>
+    {% endblock jeemaincontent %}
+
+
+    <!-------------------------------------------- Main Site Footer Section --------------------------------------------------->
+    {% include 'books/footer.html' %}
+
+
+    <!-------------------------------------------- Main Site JSQuery Section --------------------------------------------------->
+    <!-- Jquery Library file -->
+    <script src="{% static '/js/Jquery3.4.1.min.js' %}"></script>
+
+    <!--Owl Carousal -->
+    <script src="{% static '/js/owl.carousel.min.js' %}"></script>
+
+    <!--AOS js Library-->
+    <script src="{% static '/js/aos.js' %}"></script>
+    <!-- Custom Jquery file-->
+    <script src="{% static '/js/main.js' %}"></script>
+
+
+</body>
+
+</html>
